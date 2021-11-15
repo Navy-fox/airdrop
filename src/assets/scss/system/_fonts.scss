@@ -1,0 +1,59 @@
+//font: 'Axiforma'
+@font-face {
+  font-family: 'Axiforma';
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: local('Axiforma'),
+  url("./public/fonts/Axiforma-Regular.woff") format('woff');
+}
+
+//font: LabGrotesque - R
+@font-face {
+  font-family: 'LabGrotesque';
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: local('LabGrotesque'),
+  url("./public/fonts/LabGrotesque-Regular.woff") format('woff');
+}
+
+//font: LabGrotesque - M
+@font-face {
+  font-family: 'LabGrotesque';
+  font-weight: 500;
+  font-style: normal;
+  font-display: auto;
+  src: local('LabGrotesque'),
+  url("./public/fonts/LabGrotesque-Regular.woff") format('woff');
+}
+
+//font: LabGrotesque - Bold
+@font-face {
+  font-family: 'LabGrotesque';
+  font-weight: 700;
+  font-style: normal;
+  font-display: auto;
+  src: local('LabGrotesque'),
+  url("./public/fonts/LabGrotesque-Regular.woff") format('woff');
+}
+
+//font: LabGrotesque - Black
+@font-face {
+  font-family: 'LabGrotesque';
+  font-weight: 900;
+  font-style: normal;
+  font-display: auto;
+  src: local('LabGrotesque'),
+  url("./public/fonts/LabGrotesque-Regular.woff") format('woff');
+}
+
+//font: adineuePROCyr
+@font-face {
+  font-family: 'adineuePROCyr';
+  font-weight: bold;
+  font-style: normal;
+  font-display: auto;
+  src: local('adineuePROCyr'),
+  url("./public/fonts/adineuePROCyr-BoldWeb.woff") format('woff');
+}
