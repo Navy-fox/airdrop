@@ -2,5 +2,26 @@
 @import "system/fonts";
 @import "system/variables";
 
+.text-nav {
+  font-family: Axiforma, serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 22px;
+  color: $color-nav-text;
+
+  &--active {
+    color: $color-nav-text-active;
+  }
+}
+
+.heading {
+}
+
+.text {
+}
+
+
+
 
 
