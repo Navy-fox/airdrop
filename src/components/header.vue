@@ -44,6 +44,19 @@ export default {
   width: 100vw;
 }
 
+.text-nav {
+  font-family: Axiforma, serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 22px;
+  color: $color-nav-text;
+
+  &--active {
+    color: $color-text-active;
+  }
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -80,17 +93,17 @@ export default {
   width: 39px;
   height: 39px;
   position: relative;
-}
 
-.grad:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(-135deg, #21d4fd 22%, #e40ecf 70%);
-  border-radius: 50%;
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(-135deg, #21d4fd 22%, #e40ecf 70%);
+    border-radius: 50%;
+  }
 }
 </style>
