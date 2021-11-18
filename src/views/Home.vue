@@ -1,21 +1,17 @@
 <template>
   <div class="home">
-    <p class="test">Astolfo</p>
-    <div class="test-buttons">
-      <button class="test-button test-button__f">fuck</button>
-      <div class="suck">
-        <button class="test-button test-button__s">suck</button>
-      </div>
-    </div>
+    <Main />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 
+import Main from "../components/main";
+
 export default {
   name: "Home",
-  components: {},
+  components: { Main },
 };
 </script>
 

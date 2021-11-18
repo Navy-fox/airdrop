@@ -42,6 +42,7 @@ export default {
   align-items: center;
   padding: 20px 48px;
   width: 100vw;
+  z-index: 10;
 }
 
 .text-nav {
@@ -82,6 +83,7 @@ export default {
   width: 35px;
   height: 35px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .grad {
