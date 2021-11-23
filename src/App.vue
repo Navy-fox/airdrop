@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss">
 #app {
-  background-color: gray;
+  background-color: $color-dark;
   height: 100vh;
 }
 </style>
