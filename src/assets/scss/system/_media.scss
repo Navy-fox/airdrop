@@ -1,0 +1,22 @@
+@import "variables";
+
+@mixin lap() {
+  @media (max-width: $media-lap) {
+    @content
+  }
+}
+@mixin tab() {
+  @media (max-width: $media-tab) {
+    @content
+  }
+}
+@mixin mob() {
+  @media (max-width: $media-mob) {
+    @content
+  }
+}
+//@mixin book-ratio() {
+//  @media (max-aspect-ratio: 3/2) {
+//    @content
+//  }
+//}
