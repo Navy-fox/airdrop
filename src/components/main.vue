@@ -18,43 +18,57 @@
       <div class="parallax-img">
         <div class="parallax-img__item">
           <div
+            :style="transform.shadow"
             class="parallax-img__shadow-rose parallax-img__shadow-rose--1"
           ></div>
         </div>
         <div class="parallax-img__item">
           <div
+            :style="transform.shadow"
             class="parallax-img__shadow-blue parallax-img__shadow-blue--1"
           ></div>
         </div>
         <div class="parallax-img__item">
-          <div class="parallax-img__sky"></div>
+          <div :style="transform.sky" class="parallax-img__sky"></div>
         </div>
         <div class="parallax-img__item">
           <div
+            :style="transform.shadow"
             class="parallax-img__shadow-rose parallax-img__shadow-rose--2"
           ></div>
         </div>
         <div class="parallax-img__item">
           <div
+            :style="transform.shadow"
             class="parallax-img__shadow-blue parallax-img__shadow-blue--2"
           ></div>
         </div>
-        <div class="parallax-img__item">
+        <div :style="transform.boxLV1" class="parallax-img__item">
           <div class="parallax-img__box-rose parallax-img__box-rose--0"></div>
         </div>
-        <div class="parallax-img__item" v-for="(i, k) in new Array(4)" :key="k">
+        <div
+          :style="transform[`boxLV${k + 1}`]"
+          class="parallax-img__item"
+          v-for="(i, k) in new Array(4)"
+          :key="`${k}-b`"
+        >
           <div
             :class="`parallax-img__box-blue--${k + 1}`"
             class="parallax-img__box-blue"
           ></div>
         </div>
         <div class="parallax-img__item">
-          <div class="parallax-img__human"></div>
+          <div :style="transform.human" class="parallax-img__human"></div>
         </div>
         <div class="parallax-img__item">
-          <div class="parallax-img__box-open"></div>
+          <div :style="transform.boxOpen" class="parallax-img__box-open"></div>
         </div>
-        <div class="parallax-img__item" v-for="(i, k) in new Array(5)" :key="k">
+        <div
+          :style="transform[`boxLV${k + 1}`]"
+          class="parallax-img__item"
+          v-for="(i, k) in new Array(5)"
+          :key="k"
+        >
           <div
             :class="`parallax-img__box-rose--${k + 1}`"
             class="parallax-img__box-rose"
@@ -68,37 +82,142 @@
 <script>
 export default {
   name: "main",
+  data() {
+    return {
+      // коэффициенты
+      forShadow: -30,
+      forSky: 40,
+      forBoxLV5: -25,
+      forBoxLV4: 20,
+      forBoxLV3: -20,
+      forBoxLV2: -15,
+      forBoxLV1: 15,
+      forHuman: 20,
+      forBoxOpen: 5,
+      //скорость анимации
+      speed: 0.05,
+      // текущее положение элемента
+      positionX: 0,
+      positionY: 0,
+      // положение элемента в процентах
+      coordXprocent: 0,
+      coordYprocent: 0,
+      transform: {
+        sky: "",
+        human: "",
+        boxLV1: "",
+        boxLV2: "",
+        boxLV3: "",
+        boxLV4: "",
+        boxLV5: "",
+        boxOpen: "",
+        shadow: "",
+      },
+    };
+  },
+  methods: {
+    setMouseParallaxStyle() {
+      const parallax = this.$el.querySelector(".parallax");
+      if (parallax) {
+        const distX = this.coordXprocent - this.positionX;
+        const distY = this.coordYprocent - this.positionY;
+
+        this.positionX = this.positionX + distX * this.speed;
+        this.positionY = this.positionY + distY * this.speed;
+
+        this.transform.boxOpen = `transform: translate(${
+          this.positionX / this.forBoxOpen
+        }%,${this.positionY / this.forBoxOpen}%)`;
+        this.transform.boxLV1 = `transform: translate(${
+          this.positionX / this.forBoxLV1
+        }%,${this.positionY / this.forBoxLV1}%)`;
+        this.transform.human = `transform: translate(${
+          this.positionX / this.forHuman
+        }%,${this.positionY / this.forHuman}%)`;
+        this.transform.boxLV2 = `transform: translate(${
+          this.positionX / this.forBoxLV2
+        }%,${this.positionY / this.forBoxLV2}%)`;
+        this.transform.boxLV3 = `transform: translate(${
+          this.positionX / this.forBoxLV3
+        }%,${this.positionY / this.forBoxLV3}%)`;
+        this.transform.boxLV4 = `transform: translate(${
+          this.positionX / this.forBoxLV4
+        }%,${this.positionY / this.forBoxLV4}%)`;
+        this.transform.boxLV5 = `transform: translate(${
+          this.positionX / this.forBoxLV5
+        }%,${this.positionY / this.forBoxLV5}%)`;
+        this.transform.shadow = `transform: translate(${
+          this.positionX / this.forShadow
+        }%,${this.positionY / this.forShadow}%)`;
+        this.transform.sky = `transform: translate(${
+          this.positionX / this.forSky
+        }%,${this.positionY / this.forSky}%)`;
+
+        requestAnimationFrame(this.setMouseParallaxStyle);
+
+        parallax.addEventListener("mousemove", async (e) => {
+          // получение шырины и высоты блока
+          const parallaxWidth = parallax.offsetWidth;
+          const parallaxHeight = parallax.offsetHeight;
+          // начальное положение когда курсор в центре
+          const coordX = e.pageX - parallaxWidth / 2;
+          const coordY = e.pageY - parallaxHeight / 2;
+          //получение процентных значений
+          this.coordXprocent = (coordX / parallaxWidth) * 100;
+          this.coordYprocent = (coordY / parallaxHeight) * 100;
+        });
+      }
+    },
+  },
+
+  mounted() {
+    this.setMouseParallaxStyle();
+  },
 };
 </script>
 
 <style lang="scss">
 .main {
-  min-height: 100vh;
+  max-height: 100vh;
+  @include tab() {
+    max-height: 840px;
+  }
 }
 
 .body {
   //padding-top: 130px;
-  padding-top: 10%;
+  padding-top: 5%;
+  height: 100%;
+  @include lap() {
+    padding-top: 8%;
+  }
 
   &__title {
     display: flex;
     flex-direction: column;
     grid-column: 1/6;
-    //padding-bottom: 10px;
     gap: 10px;
     z-index: 2;
   }
 
   &__text {
     font-family: adineuePROCyr, serif;
-    font-size: 41px;
+    font-size: 36px;
     line-height: 134%;
     font-style: normal;
     font-weight: bold;
     color: $color-white;
     grid-column: 1/8;
-    padding-top: 15%;
+    padding-top: 5%;
     z-index: 2;
+    @include lap() {
+      padding-top: 0;
+      padding-bottom: 5%;
+    }
+
+    @include tab() {
+      font-size: 28px;
+    }
   }
 }
 
@@ -151,6 +270,10 @@ export default {
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include lap() {
+      background-position: top left 61%;
+    }
   }
 
   &__box-open {
@@ -167,6 +290,11 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto auto;
+
+    @include lap() {
+      top: 45%;
+      left: 43%;
+    }
   }
 
   &__box-rose {
@@ -181,9 +309,12 @@ export default {
       width: 78px;
       height: 70px;
       top: 56%;
-      //left: 820px;
       left: 35.5%;
       transform: rotate(-60deg);
+      @include lap() {
+        top: 54%;
+        left: 34%;
+      }
     }
 
     &--1 {
@@ -194,6 +325,10 @@ export default {
       left: -2%;
       transform: matrix(-0.94, -0.34, -0.34, 0.94, 0, 0);
       filter: blur(15px);
+
+      @include lap() {
+        display: none;
+      }
     }
 
     &--2 {
@@ -203,6 +338,10 @@ export default {
       //left: 200px;
       left: 9%;
       transform: rotate(45deg);
+
+      @include lap() {
+        display: none;
+      }
     }
 
     &--3 {
@@ -212,6 +351,9 @@ export default {
       //left: 115px;
       left: 5%;
       transform: rotate(81deg);
+      @include lap() {
+        display: none;
+      }
     }
 
     &--4 {
@@ -220,6 +362,9 @@ export default {
       top: 25%;
       //left: 1075px;
       left: 47%;
+      @include lap() {
+        left: 45%;
+      }
     }
   }
 
@@ -238,6 +383,9 @@ export default {
       left: 82%;
       transform: rotate(-9deg);
       filter: blur(12px);
+      @include lap() {
+        display: none;
+      }
     }
 
     &--2 {
@@ -246,6 +394,9 @@ export default {
       top: 21%;
       left: 73%;
       transform: rotate(-15deg);
+      @include lap() {
+        left: 77%;
+      }
     }
 
     &--3 {
@@ -254,6 +405,9 @@ export default {
       top: 60%;
       left: 80%;
       transform: rotate(86deg);
+      @include lap() {
+        display: none;
+      }
     }
 
     &--4 {
@@ -262,6 +416,10 @@ export default {
       top: 54%;
       left: 16.5%;
       transform: rotate(-55deg);
+      @include lap() {
+        top: 50%;
+        left: 7%;
+      }
     }
   }
 
@@ -278,6 +436,7 @@ export default {
       top: 60%;
       left: -20%;
     }
+
     &--2 {
       width: 1200px;
       height: 1200px;
@@ -285,6 +444,7 @@ export default {
       left: -20%;
     }
   }
+
   &__shadow-blue {
     position: absolute;
     background-color: $color-gradient-primary;
@@ -298,6 +458,7 @@ export default {
       top: 55%;
       left: 53%;
     }
+
     &--2 {
       width: 650px;
       height: 650px;
@@ -309,7 +470,8 @@ export default {
 
 .button {
   width: 250px;
+  height: 70px;
   grid-column: 1/5;
-  margin-bottom: 50px;
+  //margin-bottom: 5%;
 }
 </style>

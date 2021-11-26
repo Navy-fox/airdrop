@@ -1,6 +1,7 @@
 @import "reset.min";
 @import "system/fonts";
 @import "system/variables";
+@import "system/media";
 @import "system/function";
 @import "components/buttons";
 
@@ -15,6 +16,9 @@
   &--h1 {
     font-size: 78px;
     line-height: 95%;
+    @include tab() {
+      font-size: 56px;
+    }
   }
 
   &--h2 {
@@ -74,12 +78,21 @@
 .wrapper {
   margin: 0 auto;
   width: 1200px;
+  padding: 0 15px;
+  @include tab() {
+    width: 100%;
+    padding: 0 15px;
+  }
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 40px;
+  @include mob() {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
 }
 
 

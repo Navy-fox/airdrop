@@ -40,7 +40,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 48px;
+  padding: 5px 48px;
   width: 100vw;
   z-index: 10;
 }
