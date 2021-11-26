@@ -19,6 +19,9 @@
     @include tab() {
       font-size: 56px;
     }
+    @include mob() {
+      font-size: 48px;
+    }
   }
 
   &--h2 {

@@ -60,8 +60,12 @@
         <div class="parallax-img__item">
           <div :style="transform.human" class="parallax-img__human"></div>
         </div>
-        <div class="parallax-img__item">
-          <div :style="transform.boxOpen" class="parallax-img__box-open"></div>
+        <div
+          :style="transform.boxOpen"
+          style="mix-blend-mode: screen"
+          class="parallax-img__item"
+        >
+          <div class="parallax-img__box-open"></div>
         </div>
         <div
           :style="transform[`boxLV${k + 1}`]"
@@ -185,11 +189,13 @@ export default {
 }
 
 .body {
-  //padding-top: 130px;
   padding-top: 5%;
   height: 100%;
   @include lap() {
     padding-top: 8%;
+  }
+  @include mob() {
+    padding-top: 30%;
   }
 
   &__title {
@@ -217,6 +223,9 @@ export default {
 
     @include tab() {
       font-size: 28px;
+    }
+    @include mob() {
+      display: none;
     }
   }
 }
@@ -265,13 +274,12 @@ export default {
     height: 60%;
     left: 0;
     bottom: 0;
-    //background: url("/image/human.png") top / cover no-repeat;
     background-image: url("/image/human.png");
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
 
-    @include lap() {
+    @include tab() {
       background-position: top left 61%;
     }
   }
@@ -281,11 +289,9 @@ export default {
     width: 262px;
     height: 229px;
     top: 51%;
-    //left: 1050px;
     left: 45%;
     transform: rotate(11deg);
-    mix-blend-mode: screen;
-    //background: url("/image/box-open.png") top / auto auto no-repeat;
+    //mix-blend-mode: screen;
     background-image: url("/image/box-open.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -295,11 +301,20 @@ export default {
       top: 45%;
       left: 43%;
     }
+    @include tab() {
+      left: 30%;
+    }
+    @include mob() {
+      width: 152px;
+      height: 133px;
+      background-size: contain;
+      top: 47%;
+      left: 25%;
+    }
   }
 
   &__box-rose {
     position: absolute;
-    //background: url("/image/box-rose.png") top / cover no-repeat;
     background-image: url("/image/box-rose.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -315,13 +330,22 @@ export default {
         top: 54%;
         left: 34%;
       }
+      @include tab() {
+        top: 52%;
+        left: 15%;
+      }
+      @include mob() {
+        width: 31px;
+        height: 28px;
+        //top: 52%;
+        //left: 15%;
+      }
     }
 
     &--1 {
       width: 414px;
       height: 370px;
       top: 10%;
-      //left: -50px;
       left: -2%;
       transform: matrix(-0.94, -0.34, -0.34, 0.94, 0, 0);
       filter: blur(15px);
@@ -329,13 +353,20 @@ export default {
       @include lap() {
         display: none;
       }
+      @include tab() {
+        display: block;
+        filter: none;
+        width: 56px;
+        height: 50px;
+        top: 20%;
+        left: 6%;
+      }
     }
 
     &--2 {
       width: 80px;
       height: 70px;
       top: 50%;
-      //left: 200px;
       left: 9%;
       transform: rotate(45deg);
 
@@ -348,7 +379,6 @@ export default {
       width: 196px;
       height: 175px;
       top: 80%;
-      //left: 115px;
       left: 5%;
       transform: rotate(81deg);
       @include lap() {
@@ -360,17 +390,18 @@ export default {
       width: 196px;
       height: 175px;
       top: 25%;
-      //left: 1075px;
       left: 47%;
       @include lap() {
         left: 45%;
+      }
+      @include tab() {
+        display: none;
       }
     }
   }
 
   &__box-blue {
     position: absolute;
-    //background: url("/image/box-rose.png") top / cover no-repeat;
     background-image: url("/image/box-blue.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -397,6 +428,9 @@ export default {
       @include lap() {
         left: 77%;
       }
+      @include tab() {
+        left: 80%;
+      }
     }
 
     &--3 {
@@ -420,6 +454,9 @@ export default {
         top: 50%;
         left: 7%;
       }
+      @include tab() {
+        display: none;
+      }
     }
   }
 
@@ -435,6 +472,10 @@ export default {
       height: 800px;
       top: 60%;
       left: -20%;
+      @include tab() {
+        left: -60%;
+        top: 40%;
+      }
     }
 
     &--2 {
@@ -442,6 +483,10 @@ export default {
       height: 1200px;
       top: -20%;
       left: -20%;
+      @include tab() {
+        left: -60%;
+        top: -50%;
+      }
     }
   }
 
@@ -457,6 +502,10 @@ export default {
       height: 750px;
       top: 55%;
       left: 53%;
+      @include tab() {
+        left: 40%;
+        top: 40%;
+      }
     }
 
     &--2 {
@@ -464,6 +513,9 @@ export default {
       height: 650px;
       top: 20%;
       left: 70%;
+      @include tab() {
+        top: 15%;
+      }
     }
   }
 }
@@ -472,6 +524,15 @@ export default {
   width: 250px;
   height: 70px;
   grid-column: 1/5;
-  //margin-bottom: 5%;
+  @include mob() {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    margin-top: auto;
+    margin-bottom: 15px;
+    grid-column: span 8;
+  }
 }
 </style>
