@@ -60,6 +60,9 @@
         <div class="parallax-img__item">
           <div :style="transform.human" class="parallax-img__human"></div>
         </div>
+        <div class="parallax-img__item">
+          <div class="parallax-img__shadow"></div>
+        </div>
         <div
           :style="transform.boxOpen"
           style="mix-blend-mode: screen"
@@ -79,6 +82,7 @@
           />
         </div>
       </div>
+      <!--      <div class="parallax__shadow"></div>-->
     </div>
   </div>
 </template>
@@ -245,6 +249,19 @@ export default {
   top: -10%;
   left: -8%;
   z-index: 1;
+
+  &__shadow {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 9, 20, 0) 0%,
+      $color-dark 100%
+    );
+  }
 
   &__item {
     position: absolute;
