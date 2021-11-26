@@ -110,6 +110,7 @@ export default {
       // положение элемента в процентах
       coordXprocent: 0,
       coordYprocent: 0,
+      parallax: null,
       transform: {
         sky: "",
         human: "",
@@ -125,8 +126,8 @@ export default {
   },
   methods: {
     setMouseParallaxStyle() {
-      const parallax = this.$el.querySelector(".parallax");
-      if (parallax) {
+      this.parallax = this.$el.querySelector(".parallax");
+      if (this.parallax) {
         const distX = this.coordXprocent - this.positionX;
         const distY = this.coordYprocent - this.positionY;
 
@@ -163,23 +164,28 @@ export default {
 
         requestAnimationFrame(this.setMouseParallaxStyle);
 
-        parallax.addEventListener("mousemove", async (e) => {
-          // получение шырины и высоты блока
-          const parallaxWidth = parallax.offsetWidth;
-          const parallaxHeight = parallax.offsetHeight;
-          // начальное положение когда курсор в центре
-          const coordX = e.pageX - parallaxWidth / 2;
-          const coordY = e.pageY - parallaxHeight / 2;
-          //получение процентных значений
-          this.coordXprocent = (coordX / parallaxWidth) * 100;
-          this.coordYprocent = (coordY / parallaxHeight) * 100;
-        });
+        this.parallax.addEventListener("mousemove", this.forEventListener);
       }
+    },
+
+    async forEventListener(e) {
+      // получение шырины и высоты блока
+      const parallaxWidth = this.parallax.offsetWidth;
+      const parallaxHeight = this.parallax.offsetHeight;
+      // начальное положение когда курсор в центре
+      const coordX = e.pageX - parallaxWidth / 2;
+      const coordY = e.pageY - parallaxHeight / 2;
+      //получение процентных значений
+      this.coordXprocent = (coordX / parallaxWidth) * 100;
+      this.coordYprocent = (coordY / parallaxHeight) * 100;
     },
   },
 
   mounted() {
     this.setMouseParallaxStyle();
+  },
+  beforeDestroy() {
+    this.parallax.removeEventListener("mousemove", this.forEventListener());
   },
 };
 </script>
