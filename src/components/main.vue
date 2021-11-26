@@ -101,7 +101,7 @@ export default {
       forBoxLV2: -15,
       forBoxLV1: 15,
       forHuman: 20,
-      forBoxOpen: 5,
+      forBoxOpen: 10,
       //скорость анимации
       speed: 0.05,
       // текущее положение элемента
