@@ -23,13 +23,17 @@
     padding: 15px;
   }
 
+  &--circle {
+    border: $color-primary solid 2px;
+  }
+
   &:hover {
     transform: scale(1.05);
     transition: all ease-in-out 0.15s;
   }
 
   &--grad-border {
-    color: $color-gradient-accent;
+    color: $color-accent;
     background: gradient-accent(-87deg, 11%, 95%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -44,7 +48,7 @@
   padding: calc(var(--b) + 5px);
   z-index: 0;
 
-  color: $color-gradient-accent;
+  color: $color-accent;
   display: inline-block;
   position: relative;
   transition: all ease-in-out 0.15s;

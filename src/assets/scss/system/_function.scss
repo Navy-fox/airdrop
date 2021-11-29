@@ -16,6 +16,6 @@
   $a-one:0%,
   $a-two:100%
 ) {
-  $grad: linear-gradient($deg, $color-gradient-primary $a-one, $color-gradient-accent $a-two);
+  $grad: linear-gradient($deg, $color-primary $a-one, $color-accent $a-two);
   @return $grad
 }
