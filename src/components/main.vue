@@ -1,88 +1,86 @@
 <template>
   <div class="main">
     <div class="parallax">
-      <div class="wrapper grid body">
-        <h1 class="body__title">
-          <span class="heading heading--h1"> Foil.Network </span>
-          <span class="heading heading--h1 heading--grad1">
-            Bounty Hunt & Airdrop
-          </span>
-        </h1>
-        <button class="button button--gradient">Actual Airdrops</button>
-        <p class="body__text">
-          Earn FOIL by participating in the bounty campaign. The Blockchain
-          Interactions crypto rewards event brings the important mission of
-          scalability and sustainability of the FOIL elastic blockchain.
-        </p>
+      <div class="body">
+        <div class="container wrapper grid">
+          <h1 class="body__title">
+            <span class="heading heading--h1"> Foil.Network </span>
+            <span class="heading heading--h1 heading--grad1">
+              Bounty Hunt & Airdrop
+            </span>
+          </h1>
+          <button class="button button--gradient">Actual Airdrops</button>
+          <p class="body__text">
+            Earn FOIL by participating in the bounty campaign. The Blockchain
+            Interactions crypto rewards event brings the important mission of
+            scalability and sustainability of the FOIL elastic blockchain.
+          </p>
+        </div>
+        <div class="parallax-img">
+          <div class="parallax-img__item">
+            <div
+              :style="transform.shadow"
+              class="parallax-img__shadow-rose parallax-img__shadow-rose--1"
+            ></div>
+          </div>
+          <div class="parallax-img__item">
+            <div
+              :style="transform.shadow"
+              class="parallax-img__shadow-blue parallax-img__shadow-blue--1"
+            ></div>
+          </div>
+          <div class="parallax-img__item">
+            <div :style="transform.sky" class="parallax-img__sky"></div>
+          </div>
+          <div class="parallax-img__item">
+            <div
+              :style="transform.shadow"
+              class="parallax-img__shadow-rose parallax-img__shadow-rose--2"
+            ></div>
+          </div>
+          <div class="parallax-img__item">
+            <div
+              :style="transform.shadow"
+              class="parallax-img__shadow-blue parallax-img__shadow-blue--2"
+            ></div>
+          </div>
+          <div :style="transform.boxLV1" class="parallax-img__item">
+            <div class="parallax-img__box-rose parallax-img__box-rose--0"></div>
+          </div>
+          <div
+            :style="transform[`boxLV${k + 1}`]"
+            class="parallax-img__item"
+            v-for="(i, k) in new Array(4)"
+            :key="`${k}-b`"
+          >
+            <div
+              :class="`parallax-img__box-blue--${k + 1}`"
+              class="parallax-img__box-blue"
+            ></div>
+          </div>
+          <div class="parallax-img__item">
+            <div :style="transform.human" class="parallax-img__human"></div>
+          </div>
+          <div
+            :style="transform.boxOpen"
+            style="mix-blend-mode: screen"
+            class="parallax-img__item"
+          >
+            <div class="parallax-img__box-open"></div>
+          </div>
+          <div
+            :style="transform[`boxLV${k + 1}`]"
+            class="parallax-img__item"
+            v-for="(i, k) in new Array(5)"
+            :key="k"
+          >
+            <div
+              :class="`parallax-img__box-rose--${k + 1}`"
+              class="parallax-img__box-rose"
+            />
+          </div>
+        </div>
       </div>
-      <div class="parallax-img">
-        <div class="parallax-img__item">
-          <div
-            :style="transform.shadow"
-            class="parallax-img__shadow-rose parallax-img__shadow-rose--1"
-          ></div>
-        </div>
-        <div class="parallax-img__item">
-          <div
-            :style="transform.shadow"
-            class="parallax-img__shadow-blue parallax-img__shadow-blue--1"
-          ></div>
-        </div>
-        <div class="parallax-img__item">
-          <div :style="transform.sky" class="parallax-img__sky"></div>
-        </div>
-        <div class="parallax-img__item">
-          <div
-            :style="transform.shadow"
-            class="parallax-img__shadow-rose parallax-img__shadow-rose--2"
-          ></div>
-        </div>
-        <div class="parallax-img__item">
-          <div
-            :style="transform.shadow"
-            class="parallax-img__shadow-blue parallax-img__shadow-blue--2"
-          ></div>
-        </div>
-        <div :style="transform.boxLV1" class="parallax-img__item">
-          <div class="parallax-img__box-rose parallax-img__box-rose--0"></div>
-        </div>
-        <div
-          :style="transform[`boxLV${k + 1}`]"
-          class="parallax-img__item"
-          v-for="(i, k) in new Array(4)"
-          :key="`${k}-b`"
-        >
-          <div
-            :class="`parallax-img__box-blue--${k + 1}`"
-            class="parallax-img__box-blue"
-          ></div>
-        </div>
-        <div class="parallax-img__item">
-          <div :style="transform.human" class="parallax-img__human"></div>
-        </div>
-        <div class="parallax-img__item">
-          <div class="parallax-img__shadow"></div>
-        </div>
-        <div
-          :style="transform.boxOpen"
-          style="mix-blend-mode: screen"
-          class="parallax-img__item"
-        >
-          <div class="parallax-img__box-open"></div>
-        </div>
-        <div
-          :style="transform[`boxLV${k + 1}`]"
-          class="parallax-img__item"
-          v-for="(i, k) in new Array(5)"
-          :key="k"
-        >
-          <div
-            :class="`parallax-img__box-rose--${k + 1}`"
-            class="parallax-img__box-rose"
-          />
-        </div>
-      </div>
-      <!--      <div class="parallax__shadow"></div>-->
     </div>
   </div>
 </template>
@@ -198,15 +196,22 @@ export default {
   }
 }
 
-.body {
+.container {
   padding-top: 5%;
-  height: 100%;
   @include lap() {
     padding-top: 8%;
   }
   @include mob() {
     padding-top: 30%;
   }
+}
+
+.body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 
   &__title {
     display: flex;
@@ -241,16 +246,15 @@ export default {
 }
 
 .parallax {
-  //position: fixed;
-  //position: relative;
-  //max-width: 100vw;
-  //height: 100vh;
   min-height: 100vh;
-
-  //width: 100%;
-  //height: 100%;
-  //top: 0;
-  //left: 0;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(rgba(10, 9, 20, 0) 0%, $color-dark 100%);
+  }
 }
 
 .parallax-img {
@@ -260,19 +264,6 @@ export default {
   top: -10%;
   left: -8%;
   z-index: 1;
-
-  &__shadow {
-    position: absolute;
-    width: 100%;
-    height: 30%;
-    left: 0;
-    bottom: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(10, 9, 20, 0) 0%,
-      $color-dark 100%
-    );
-  }
 
   &__item {
     position: absolute;

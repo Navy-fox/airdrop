@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <img src="/icon/logo.svg" alt="logo" class="logo-circle" />
+    <img src="/icon/logo.svg" alt="logo" class="logo" />
     <nav class="nav">
       <router-link to="/" class="nav__item text-nav">Foil</router-link>
       <router-link to="/" class="nav__item text-nav">Learn</router-link>

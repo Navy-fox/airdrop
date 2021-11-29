@@ -5,6 +5,23 @@
 @import "system/function";
 @import "components/buttons";
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $color-accent $color-primary;
+  //scrollbar-color: rgba(228,14,207,0.4) $color-primary;
+  //scrollbar-color: $color-primary $color-accent;
+}
+*::-webkit-scrollbar {
+  width: 7px;
+}
+*::-webkit-scrollbar-track {
+  background: $color-primary;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: $color-accent;
+  border: none;
+}
+
 .heading {
   font-family: adineuePROCyr, serif;
   color: $color-white;

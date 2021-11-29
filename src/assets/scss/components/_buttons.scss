@@ -25,6 +25,8 @@
 
   &--circle {
     border: $color-primary solid 2px;
+    background: none;
+    border-radius: 50%;
   }
 
   &:hover {
