@@ -192,7 +192,7 @@ export default {
 
 <style lang="scss">
 .main {
-  max-height: 100vh;
+  min-height: 100vh;
   @include tab() {
     max-height: 840px;
   }
@@ -241,11 +241,16 @@ export default {
 }
 
 .parallax {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  //position: fixed;
+  //position: relative;
+  //max-width: 100vw;
+  //height: 100vh;
+  min-height: 100vh;
+
+  //width: 100%;
+  //height: 100%;
+  //top: 0;
+  //left: 0;
 }
 
 .parallax-img {
@@ -485,7 +490,7 @@ export default {
 
   &__shadow-rose {
     position: absolute;
-    background-color: $color-gradient-accent;
+    background-color: $color-accent;
     opacity: 0.4;
     border-radius: 50%;
     filter: blur(640px);
@@ -515,7 +520,7 @@ export default {
 
   &__shadow-blue {
     position: absolute;
-    background-color: $color-gradient-primary;
+    background-color: $color-primary;
     opacity: 0.4;
     border-radius: 50%;
     filter: blur(640px);

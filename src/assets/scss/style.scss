@@ -40,19 +40,19 @@
   }
 
   &--grad1 {
-    color: $color-gradient-accent;
+    color: $color-accent;
     background: gradient-accent(357deg, 35%, 71%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   &--grad2 {
-    color: $color-gradient-accent;
+    color: $color-accent;
     background: gradient-accent(265deg, 21%, 66%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   &--grad3 {
-    color: $color-gradient-accent;
+    color: $color-accent;
     background: gradient-accent(281deg, 43%, 48%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <img src="/icon/logo.svg" alt="logo" class="logo" />
+    <img src="/icon/logo.svg" alt="logo" class="logo-circle" />
     <nav class="nav">
       <router-link to="/" class="nav__item text-nav">Foil</router-link>
       <router-link to="/" class="nav__item text-nav">Learn</router-link>
@@ -52,6 +52,12 @@ export default {
   font-weight: normal;
   line-height: 22px;
   color: $color-nav-text;
+  transition: all ease-in-out 0.3s;
+
+  &:hover {
+    color: $color-text-active;
+    transition: all ease-in-out 0.3s;
+  }
 
   &--active {
     color: $color-text-active;
