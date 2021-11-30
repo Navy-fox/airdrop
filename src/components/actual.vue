@@ -21,10 +21,12 @@
           <img src="icon/arrow.svg" class="info__arrow" alt="" />
         </button>
       </div>
-      <div class="actual__card">
-        <CardActual />
-        <CardActual />
-      </div>
+      <CardActual
+        v-for="(card, k) in cards"
+        :key="k"
+        class="actual__card"
+        :card="card"
+      />
     </div>
     <div class="line"></div>
   </div>
@@ -32,8 +34,14 @@
 
 <script>
 import CardActual from "./card/card-actual";
+import { CARDS_ACTUAL } from "../data/CARDS_ACTUAL";
 export default {
   name: "actual",
+  data() {
+    return {
+      cards: CARDS_ACTUAL,
+    };
+  },
   components: { CardActual },
 };
 </script>
@@ -44,14 +52,15 @@ export default {
   flex-direction: column;
   gap: 40px;
   position: relative;
-  background: #0a0914;
+  //background: #0a0914;
   padding-top: 60px;
-  z-index: 2;
+  //z-index: 2;
 
   &__card {
-    display: flex;
-    gap: 15px;
-    grid-column: span 12;
+    grid-column: span 6;
+    @include tab() {
+      grid-column: span 12;
+    }
   }
 }
 
@@ -60,6 +69,12 @@ export default {
   position: relative;
   align-self: center;
   justify-self: center;
+  @include lap() {
+    grid-column: span 4;
+  }
+  @include tab() {
+    grid-column: span 12;
+  }
 
   &__icon {
     position: absolute;
@@ -84,6 +99,16 @@ export default {
   grid-template-rows: 130px 1fr;
   column-gap: 20px;
   row-gap: 30px;
+  @include lap() {
+    grid-column: span 8;
+  }
+  @include tab() {
+    grid-column: span 12;
+  }
+  @include mob() {
+    grid-template-columns: 1fr 60px;
+    column-gap: 10px;
+  }
 
   &__text {
     font-family: LabGrotesque, serif;
@@ -93,6 +118,9 @@ export default {
     line-height: 171%;
     color: $color-white;
     grid-column: 1/3;
+    @include mob() {
+      font-size: 14px;
+    }
   }
 
   &__title {
@@ -103,6 +131,10 @@ export default {
     width: 140px;
     height: 140px;
     grid-column: 2/3;
+    @include mob() {
+      width: 60px;
+      height: 60px;
+    }
   }
 
   &__arrow {

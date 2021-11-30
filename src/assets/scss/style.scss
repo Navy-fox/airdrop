@@ -44,11 +44,17 @@
   &--h2 {
     font-size: 42px;
     line-height: 106%;
+    @include mob() {
+      font-size: 22px;
+    }
   }
 
   &--card-title {
     font-size: 53px;
     line-height: 72%;
+    @include mob() {
+      font-size: 30px;
+    }
   }
 
   &--card-title2 {
@@ -97,12 +103,13 @@
 
 .wrapper {
   margin: 0 auto;
-  width: 1200px;
+  max-width: 1200px;
+  width: 100vw;
   padding: 0 15px;
-  @include tab() {
-    width: 100%;
-    padding: 0 15px;
-  }
+  //@include tab() {
+  //  width: 100vw;
+  //  padding: 0 15px;
+  //}
 }
 
 .grid {

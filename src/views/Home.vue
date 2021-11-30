@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <Main />
-    <Actual />
+    <div class="content">
+      <Actual />
+    </div>
   </div>
 </template>
 
@@ -17,4 +19,10 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.content {
+  position: relative;
+  background: #0a0914;
+  z-index: 2;
+}
+</style>
