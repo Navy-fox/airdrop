@@ -1,17 +1,16 @@
 <template>
   <div class="card">
     <div class="card__image image">
-      <img src="image/card-actual/c1.png" alt="" class="image__bg" />
-      <img src="image/card-actual/c1.png" alt="" class="image__front" />
+      <img :src="card.img" alt="" class="image__bg" />
+      <img :src="card.img" alt="" class="image__front" />
     </div>
     <h3 class="card__title">
       <span class="heading heading--card-title heading--grad2">
-        Actual Airdrop title
+        {{ card.title }}
       </span>
     </h3>
     <p class="card__description">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae
-      corporis debitis dignissimos minima molestiae odio odit, quo unde.
+      {{ card.description }}
     </p>
   </div>
 </template>
@@ -19,6 +18,9 @@
 <script>
 export default {
   name: "card-actual",
+  props: {
+    card: Object,
+  },
 };
 </script>
 
@@ -27,6 +29,10 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  @include mob() {
+    gap: 10px;
+  }
+
   &__description {
     font-family: LabGrotesque, serif;
     font-weight: 400;
@@ -34,11 +40,16 @@ export default {
     font-size: 18px;
     line-height: 140%;
     color: $color-white;
+    @include mob() {
+      font-size: 14px;
+    }
   }
 }
 
 .image {
   position: relative;
+  width: 100%;
+
   &__front {
     position: absolute;
     left: 0;
@@ -46,6 +57,7 @@ export default {
     width: 100%;
     border-radius: 7px;
   }
+
   &__bg {
     filter: blur(40px);
   }

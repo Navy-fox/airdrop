@@ -247,6 +247,7 @@ export default {
 
 .parallax {
   min-height: 100vh;
+
   &:after {
     content: "";
     position: absolute;
