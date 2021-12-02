@@ -3,6 +3,8 @@
     <Main />
     <div class="content">
       <Actual />
+      <Completed />
+      <Subscribe />
     </div>
   </div>
 </template>
@@ -12,10 +14,12 @@
 
 import Main from "../components/main";
 import Actual from "../components/actual";
+import Completed from "../components/completed";
+import Subscribe from "../components/subscribe";
 
 export default {
   name: "Home",
-  components: { Actual, Main },
+  components: { Subscribe, Completed, Actual, Main },
 };
 </script>
 

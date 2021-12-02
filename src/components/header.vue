@@ -75,8 +75,10 @@ export default {
   display: flex;
   align-items: center;
   gap: 30px;
+
   &__icons {
   }
+
   &__language {
     cursor: pointer;
   }

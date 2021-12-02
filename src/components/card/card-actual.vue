@@ -1,15 +1,15 @@
 <template>
-  <div class="card">
-    <div class="card__image image">
+  <div class="card-actual">
+    <div class="card-actual__image image">
       <img :src="card.img" alt="" class="image__bg" />
       <img :src="card.img" alt="" class="image__front" />
     </div>
-    <h3 class="card__title">
+    <h3 class="card-actual__title">
       <span class="heading heading--card-title heading--grad2">
         {{ card.title }}
       </span>
     </h3>
-    <p class="card__description">
+    <p class="card-actual__description">
       {{ card.description }}
     </p>
   </div>
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss">
-.card {
+.card-actual {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -60,6 +60,10 @@ export default {
 
   &__bg {
     filter: blur(40px);
+    width: 100%;
+  }
+  img {
+    //width: 100%;
   }
 }
 </style>

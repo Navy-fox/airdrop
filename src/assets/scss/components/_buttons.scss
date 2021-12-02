@@ -1,6 +1,6 @@
 .button {
   font-family: adineuePROCyr, serif;
-  font-size: 21px;
+  font-size: 20px;
   font-style: normal;
   font-weight: bold;
   line-height: 200%;
@@ -32,6 +32,9 @@
   &:hover {
     transform: scale(1.05);
     transition: all ease-in-out 0.15s;
+    @include tab() {
+      transform: none;
+    }
   }
 
   &--grad-border {
