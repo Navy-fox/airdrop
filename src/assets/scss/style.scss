@@ -30,6 +30,16 @@
   font-style: normal;
   font-weight: bold;
 
+  @include lap() {
+    font-size: 120px;
+  }
+  @include tab() {
+    font-size: 92px;
+  }
+  @include mob() {
+    font-size: 48px;
+  }
+
   &--h1 {
     font-size: 78px;
     line-height: 95%;
@@ -60,6 +70,9 @@
   &--card-title2 {
     font-size: 24px;
     line-height: 158%;
+    @include tab() {
+      font-size: 20px;
+    }
   }
 
   &--grad1 {
@@ -106,10 +119,10 @@
   max-width: 1200px;
   width: 100vw;
   padding: 0 15px;
-  //@include tab() {
-  //  width: 100vw;
-  //  padding: 0 15px;
-  //}
+  @include tab() {
+    width: 100vw;
+    padding: 0 15px;
+  }
 }
 
 .grid {

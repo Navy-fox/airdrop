@@ -18,7 +18,8 @@
           </span>
         </h2>
         <button class="info__but button button--circle">
-          <img src="icon/arrow.svg" class="info__arrow" alt="" />
+          <Arrow class="info__arrow" />
+          <!--          <img src="icon/arrow.svg" class="info__arrow" alt="" />-->
         </button>
       </div>
       <CardActual
@@ -35,6 +36,8 @@
 <script>
 import CardActual from "./card/card-actual";
 import { CARDS_ACTUAL } from "../data/CARDS_ACTUAL";
+import Arrow from "./icon/arrow";
+
 export default {
   name: "actual",
   data() {
@@ -42,7 +45,7 @@ export default {
       cards: CARDS_ACTUAL,
     };
   },
-  components: { CardActual },
+  components: { Arrow, CardActual },
 };
 </script>
 
@@ -106,7 +109,7 @@ export default {
     grid-column: span 12;
   }
   @include mob() {
-    grid-template-columns: 1fr 60px;
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 10px;
   }
 
@@ -120,11 +123,16 @@ export default {
     grid-column: 1/3;
     @include mob() {
       font-size: 14px;
+      grid-column: span 4;
     }
   }
 
   &__title {
     grid-column: 1/2;
+    @include mob() {
+      font-size: 14px;
+      grid-column: span 3;
+    }
   }
 
   &__but {
@@ -134,13 +142,17 @@ export default {
     @include mob() {
       width: 60px;
       height: 60px;
+      grid-column: span 1;
+      justify-self: end;
     }
   }
 
   &__arrow {
     margin: auto;
     transform: rotate(90deg);
-    width: 20px;
+    fill: $color-primary;
+    //width: 20px;
+    //height: 22px;
   }
 }
 
