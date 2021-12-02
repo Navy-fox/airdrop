@@ -35,7 +35,7 @@ export default {
 <style lang="scss">
 .header {
   position: fixed;
-  background: rgba(0, 0, 0, 0.46);
+  background: rgba(10, 9, 20, 0.5);
   border-bottom: $color-white solid 1px;
   display: flex;
   justify-content: space-between;
