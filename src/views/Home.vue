@@ -24,6 +24,12 @@
         <div class="background__item">
           <div class="background__shadow-bottom" />
         </div>
+        <div class="background__item">
+          <div class="background__box-rose" />
+        </div>
+        <div class="background__item">
+          <div class="background__box-blue" />
+        </div>
       </div>
       <div class="content">
         <Actual />
@@ -55,6 +61,7 @@ export default {
   z-index: 2;
   overflow: hidden;
 }
+
 .content {
   position: sticky;
   width: 100%;
@@ -62,17 +69,20 @@ export default {
   top: 0;
   left: 0;
 }
+
 .background {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+
   &__item {
     position: absolute;
     width: 100%;
     height: 100%;
   }
+
   &__bg-to-logo {
     position: absolute;
     background-image: url("/image/bg-to-logo.png");
@@ -97,6 +107,7 @@ export default {
       transform: rotate(-20deg);
     }
   }
+
   &__bg-to-logo-2 {
     position: absolute;
     background-image: url("/image/bg-to-logo.png");
@@ -118,6 +129,70 @@ export default {
       left: 0;
     }
   }
+
+  &__box-rose {
+    position: absolute;
+    background-image: url("/image/box-rose.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 295px;
+    height: 260px;
+    top: 70%;
+    left: -4%;
+    transform: rotate(-20deg);
+    animation: box-r 12s 5s infinite alternate
+      cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+    @keyframes box-r {
+      0% {
+        transform: rotateZ(0deg) translate3d(20%, 40%, 20px) rotateZ(0deg);
+      }
+      100% {
+        transform: rotateZ(-180deg) translate3d(0, 50%, 20px) rotateZ(180deg);
+      }
+    }
+
+    @include tab() {
+      animation: none;
+    }
+    @include mob() {
+    }
+  }
+
+  &__box-blue {
+    position: absolute;
+    background-image: url("/image/box-blue.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 560px;
+    height: 500px;
+    top: 70%;
+    left: 82%;
+    transform: rotate(-9deg);
+    filter: blur(12px);
+    animation: box-b 8s 8s infinite alternate
+      cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+    @keyframes box-b {
+      0% {
+        transform: rotateZ(0deg) translate3d(0, 5%, 0) rotateZ(0deg);
+      }
+      100% {
+        transform: rotateZ(360deg) translate3d(0, 20%, 0) rotateZ(-360deg);
+      }
+    }
+
+    @include tab() {
+      animation: none;
+    }
+    @include mob() {
+    }
+  }
+
   &__shadow-rose-top {
     position: absolute;
     background-color: $color-accent;
@@ -141,6 +216,7 @@ export default {
       left: 0;
     }
   }
+
   &__shadow-rose-bot {
     position: absolute;
     background-color: $color-accent;
@@ -164,6 +240,7 @@ export default {
       height: 600px;
     }
   }
+
   &__shadow-blue-top {
     position: absolute;
     background-color: $color-primary;
@@ -180,6 +257,7 @@ export default {
       display: none;
     }
   }
+
   &__shadow-blue-bot {
     position: absolute;
     background-color: $color-primary;
@@ -204,6 +282,7 @@ export default {
       height: 600px;
     }
   }
+
   &__shadow-bottom {
     position: absolute;
     background-color: $color-primary;
