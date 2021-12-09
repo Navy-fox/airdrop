@@ -174,12 +174,12 @@
     font-family: adineuePROCyr, serif;
     font-size: 16px;
     color: $color-white;
-    padding: 13px 30px;
-
-    &--joined {
-      border: $color-primary solid 1px;
-      background: none;
-    }
+    cursor: pointer;
+    box-sizing: border-box;
+    height: 50px;
   }
 }
-
+.fileset__button--joined {
+  border: $color-primary solid 1px;
+  background: none;
+}
