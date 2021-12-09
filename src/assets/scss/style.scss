@@ -11,12 +11,15 @@
   //scrollbar-color: rgba(228,14,207,0.4) $color-primary;
   //scrollbar-color: $color-primary $color-accent;
 }
+
 *::-webkit-scrollbar {
   width: 7px;
 }
+
 *::-webkit-scrollbar-track {
   background: $color-primary;
 }
+
 *::-webkit-scrollbar-thumb {
   background-color: $color-accent;
   border: none;
@@ -59,9 +62,18 @@
     }
   }
 
+  &--h3 {
+    font-size: 32px;
+    line-height: 106%;
+    @include mob() {
+      font-size: 24px;
+    }
+  }
+
   &--card-title {
     font-size: 53px;
     line-height: 72%;
+    cursor: pointer;
     @include mob() {
       font-size: 30px;
     }
@@ -70,6 +82,7 @@
   &--card-title2 {
     font-size: 24px;
     line-height: 158%;
+    cursor: pointer;
     @include tab() {
       font-size: 20px;
     }
@@ -81,36 +94,19 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
   &--grad2 {
     color: $color-accent;
     background: gradient-accent(265deg, 21%, 66%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
   &--grad3 {
     color: $color-accent;
     background: gradient-accent(281deg, 43%, 48%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-}
-
-.card-title {
-  font-family: adineuePROCyr, serif;
-  color: $color-white;
-  font-size: 142px;
-  line-height: 87%;
-  font-style: normal;
-  font-weight: bold;
-
-  &--b {
-    font-size: 53px;
-    line-height: 72%;
-  }
-
-  &--s {
-    font-size: 24px;
-    line-height: 158%;
   }
 }
 
@@ -125,6 +121,18 @@
   }
 }
 
+.modal-body {
+  background: gradient(180deg, 0.33, 0.06, 0%, 100%);
+  border: 1px solid #257B8E;
+  padding: 40px;
+  border-radius: 11px;
+  width: 660px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  row-gap: 20px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -136,4 +144,42 @@
 }
 
 
+.fieldset {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__label {
+    font-family: LabGrotesque, serif;
+    color: $color-white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  &__input {
+    border-radius: 8px;
+    border: $color-primary solid 1px;
+    font-family: adineuePROCyr, serif;
+    font-size: 16px;
+    color: $color-white;
+    padding: 13px 30px;
+  }
+
+  &__button {
+    border-radius: 8px;
+    background: #01333F;
+    border: none;
+    font-family: adineuePROCyr, serif;
+    font-size: 16px;
+    color: $color-white;
+    padding: 13px 30px;
+
+    &--joined {
+      border: $color-primary solid 1px;
+      background: none;
+    }
+  }
+}
 
