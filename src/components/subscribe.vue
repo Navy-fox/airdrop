@@ -4,20 +4,24 @@
       <h2 class="subscribe__title heading heading--grad2">
         Subscribe to us and stay turned!
       </h2>
-      <div class="subscribe__form subscribe-form">
-        <input type="text" placeholder="Enter your e-mail" class="subscribe-form__input" />
+      <form class="subscribe__form subscribe-form">
+        <input
+          type="text"
+          placeholder="Enter your e-mail"
+          class="subscribe-form__input"
+        />
         <button class="subscribe-form__btn button">
           <span>Send information</span>
           <Arrow class="subscribe-form" />
         </button>
-      </div>
+      </form>
     </div>
-
   </div>
 </template>
 
 <script>
 import Arrow from "./icon/arrow";
+
 export default {
   name: "subscribe",
   components: { Arrow },
@@ -36,6 +40,7 @@ export default {
   @include mob() {
     padding: 50px 0;
   }
+
   &__title {
     min-height: 260px;
     @include tab() {
@@ -56,10 +61,12 @@ export default {
     }
   }
 }
+
 .subscribe-form {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
+
   &__input {
     border-radius: 8px;
     border: $color-primary solid 1px;
@@ -69,6 +76,7 @@ export default {
     padding: 18px 30px;
     grid-column: span 4;
   }
+
   &__btn {
     background: $color-primary;
     border-radius: 8px;
@@ -80,6 +88,7 @@ export default {
     gap: 20px;
     //padding: 15px 30px;
   }
+
   @include tab() {
     display: flex;
     flex-direction: column;
