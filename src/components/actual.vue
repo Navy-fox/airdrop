@@ -19,7 +19,6 @@
         </h2>
         <button class="info__but button button--circle">
           <Arrow class="info__arrow" />
-          <!--          <img src="icon/arrow.svg" class="info__arrow" alt="" />-->
         </button>
       </div>
       <CardActual

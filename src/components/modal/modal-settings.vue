@@ -1,6 +1,7 @@
 <template>
-  <modal-wrapper>
+  <ModalWrapper>
     <form class="modal-settings modal-body">
+      <img src="icon/close.svg" class="modal-close" alt="" />
       <h3 class="modal-settings__title heading heading--h3">
         Settings profile
       </h3>
@@ -71,13 +72,13 @@
         </div>
       </div>
       <div class="separator"></div>
-      <button class="button button--gradient">Save settings</button>
+      <button type="button" class="button button--gradient">Save settings</button>
       <div class="button-wrap">
-        <button class="button button--grad-border">Support</button>
+        <button type="button" class="button button--grad-border">Support</button>
       </div>
-      <button class="button button--border">Cancel</button>
+      <button type="button" class="button button--border">Cancel</button>
     </form>
-  </modal-wrapper>
+  </ModalWrapper>
 </template>
 
 <script>

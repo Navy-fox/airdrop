@@ -121,18 +121,6 @@
   }
 }
 
-.modal-body {
-  background: gradient(180deg, 0.33, 0.06, 0%, 100%);
-  border: 1px solid #257B8E;
-  padding: 40px;
-  border-radius: 11px;
-  width: 660px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 10px;
-  row-gap: 20px;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -143,6 +131,18 @@
   }
 }
 
+.modal-body {
+  background: gradient(180deg, 0.33, 0.06, 0%, 100%);
+  border: 1px solid #257B8E;
+  padding: 40px;
+  border-radius: 11px;
+  width: 660px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  row-gap: 20px;
+  position: relative;
+}
 
 .fieldset {
   grid-column: span 3;
@@ -182,4 +182,11 @@
 .fileset__button--joined {
   border: $color-primary solid 1px;
   background: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
