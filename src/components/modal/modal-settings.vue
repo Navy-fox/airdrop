@@ -1,15 +1,13 @@
 <template>
   <ModalWrapper>
-    <form class="modal-settings modal-body">
+    <form class="modal-settings form-wrapper">
       <img
         src="icon/close.svg"
         class="modal-close"
         alt=""
         @click="CloseModal"
       />
-      <h3 class="modal-settings__title heading heading--h3">
-        Settings profile
-      </h3>
+      <h3 class="form-wrapper__title heading heading--h3">Settings profile</h3>
       <div class="fieldset">
         <label class="fieldset__label">Your name</label>
         <input type="text" class="fieldset__input" />
@@ -127,19 +125,6 @@ export default {
 </script>
 
 <style lang="scss">
-.modal-settings {
-  &__title {
-    grid-column: span 3;
-  }
-
-  .button,
-  .button-wrap {
-    grid-column: span 1;
-    width: 100%;
-    height: auto;
-  }
-}
-
 .collaboration {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

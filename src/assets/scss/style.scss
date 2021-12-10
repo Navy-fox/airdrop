@@ -104,7 +104,7 @@
 
   &--grad3 {
     color: $color-accent;
-    background: gradient-accent(281deg, 43%, 48%);
+    background: gradient-accent(340deg, 35%, 45%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -131,7 +131,7 @@
   }
 }
 
-.modal-body {
+.form-wrapper {
   background: gradient(180deg, 0.33, 0.06, 0%, 100%);
   border: 1px solid #257B8E;
   padding: 40px;
@@ -140,8 +140,19 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 10px;
-  row-gap: 20px;
+  row-gap: 30px;
   position: relative;
+
+  &__title {
+    grid-column: span 3;
+  }
+
+  .button,
+  .button-wrap {
+    grid-column: span 1;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .fieldset {
@@ -178,7 +189,12 @@
     box-sizing: border-box;
     height: 50px;
   }
+
+  textarea {
+    min-height: 200px;
+  }
 }
+
 .fileset__button--joined {
   border: $color-primary solid 1px;
   background: none;

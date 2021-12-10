@@ -35,6 +35,9 @@ export default {
     }
   },
   components: { CardCompleted },
+  methods: {
+    //TODO добавить метод добавления карточек на кнопку 'Load more'
+  },
 };
 </script>
 

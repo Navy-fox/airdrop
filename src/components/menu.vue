@@ -1,12 +1,18 @@
 <template>
   <div class="menu">
     <div class="menu-list">
-      <div class="menu-list__link link" @click="modals.settings = true">
+      <div
+        class="menu-list__link link"
+        @click="
+          modals.settings = true;
+          closeMenu();
+        "
+      >
         <img src="icon/cog.svg" class="link__img" alt="" />
         <span class="link__title">Settings</span>
       </div>
       <div class="menu__separator"></div>
-      <router-link to="/" class="menu-list__link">
+      <router-link to="/login" class="menu-list__link" @click.native="closeMenu()">
         <img src="icon/log-out.svg" class="link__img" alt="" />
         <span class="link__title">Relogin</span>
       </router-link>
@@ -51,6 +57,11 @@ export default {
         success: false,
       },
     };
+  },
+  methods: {
+    closeMenu() {
+      this.$emit("closeMenu");
+    },
   },
 };
 </script>

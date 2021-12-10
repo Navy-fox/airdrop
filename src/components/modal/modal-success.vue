@@ -1,6 +1,6 @@
 <template>
   <ModalWrapper>
-    <div class="modal-success modal-body">
+    <div class="modal-success form-wrapper">
       <img
         src="icon/close.svg"
         class="modal-close"

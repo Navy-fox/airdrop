@@ -1,13 +1,13 @@
 <template>
   <ModalWrapper>
-    <form action="" class="modal-support modal-body">
+    <form action="" class="modal-support form-wrapper">
       <img
         src="icon/close.svg"
         class="modal-close"
         alt=""
         @click="CloseModal"
       />
-      <h3 class="modal-support__title heading heading--h3">Support</h3>
+      <h3 class="form-wrapper__title heading heading--h3">Support</h3>
       <div class="fieldset">
         <label class="fieldset__label">Your name</label>
         <input type="text" class="fieldset__input" />
@@ -50,20 +50,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.modal-support {
-  &__title {
-    grid-column: span 3;
-  }
-
-  textarea {
-    min-height: 200px;
-  }
-
-  .button {
-    grid-column: span 1;
-    width: 100%;
-    height: auto;
-  }
-}
-</style>
+<style lang="scss"></style>
