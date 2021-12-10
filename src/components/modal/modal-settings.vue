@@ -1,7 +1,12 @@
 <template>
   <ModalWrapper>
     <form class="modal-settings modal-body">
-      <img src="icon/close.svg" class="modal-close" alt="" />
+      <img
+        src="icon/close.svg"
+        class="modal-close"
+        alt=""
+        @click="CloseModal"
+      />
       <h3 class="modal-settings__title heading heading--h3">
         Settings profile
       </h3>
@@ -72,21 +77,27 @@
         </div>
       </div>
       <div class="separator"></div>
-      <button type="button" class="button button--gradient">Save settings</button>
-      <div class="button-wrap">
-        <button type="button" class="button button--grad-border">Support</button>
+      <button type="button" class="button button--gradient" @click="isSuccess">
+        Save settings
+      </button>
+      <div class="button-wrap" @click="openSupport">
+        <button type="button" class="button button--grad-border">
+          Support
+        </button>
       </div>
-      <button type="button" class="button button--border">Cancel</button>
+      <button type="reset" class="button button--border">Cancel</button>
     </form>
   </ModalWrapper>
 </template>
 
 <script>
 import ModalWrapper from "./modal-wrapper";
+import ModalMixin from "../../mixins/modal-mixin";
 
 export default {
   name: "modal-settings",
   components: { ModalWrapper },
+  mixins: [ModalMixin],
   data() {
     return {
       isJoined: {
@@ -95,7 +106,16 @@ export default {
         facebook: true,
         linkedin: true,
       },
+      modalSupport: false,
     };
+  },
+  methods: {
+    openSupport() {
+      this.$emit("openSupport");
+    },
+    isSuccess() {
+      this.$emit("isSuccess");
+    },
   },
   mounted() {
     document.querySelector("body").style.overflow = "hidden";

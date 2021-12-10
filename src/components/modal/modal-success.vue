@@ -1,7 +1,12 @@
 <template>
   <ModalWrapper>
     <div class="modal-success modal-body">
-      <img src="icon/close.svg" class="modal-close" alt="" />
+      <img
+        src="icon/close.svg"
+        class="modal-close"
+        alt=""
+        @click="CloseModal"
+      />
       <div class="modal-success__success">
         <Success />
       </div>
@@ -13,10 +18,12 @@
 <script>
 import ModalWrapper from "./modal-wrapper";
 import Success from "../icon/success";
+import ModalMixin from "../../mixins/modal-mixin";
 
 export default {
   name: "modal-success",
   components: { Success, ModalWrapper },
+  mixins: [ModalMixin],
   mounted() {
     document.querySelector("body").style.overflow = "hidden";
   },
@@ -35,12 +42,14 @@ export default {
   width: 500px;
   padding: 60px;
   gap: 30px;
+
   &__description {
     font-size: 52px;
     @include mob() {
       font-size: 32px;
     }
   }
+
   &__success {
     border: 1px solid #21fda1;
     padding: 65px 60px;

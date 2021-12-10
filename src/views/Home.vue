@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-<!--    <ModalSettings />-->
-<!--    <ModalSupport />-->
-    <ModalSuccess />
+    <portal-target name="modal"></portal-target>
     <Main />
     <section class="content-wrapper">
       <div class="background">
@@ -50,12 +48,10 @@ import Main from "../components/main";
 import Actual from "../components/actual";
 import Completed from "../components/completed";
 import Subscribe from "../components/subscribe";
-import ModalSuccess from "../components/modal/modal-success";
 
 export default {
   name: "Home",
   components: {
-    ModalSuccess,
     Subscribe,
     Completed,
     Actual,

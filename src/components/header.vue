@@ -20,15 +20,29 @@
       </div>
       <p class="action-block__language text-nav">EN</p>
       <div class="grad">
-        <img src="/image/unnamed.jpg" alt="" class="user-icon" />
+        <Menu v-if="menuIsOpen" />
+        <img
+          src="/image/unnamed.jpg"
+          alt=""
+          class="user-icon"
+          @click="menuIsOpen = !menuIsOpen"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Menu from "./menu";
+
 export default {
   name: "header",
+  components: { Menu },
+  data() {
+    return {
+      menuIsOpen: false,
+    };
+  },
 };
 </script>
 
