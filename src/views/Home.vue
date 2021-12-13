@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <portal-target name="modal"></portal-target>
     <Main />
     <section class="content-wrapper">
       <div class="background">

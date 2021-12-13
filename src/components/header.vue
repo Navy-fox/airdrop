@@ -20,7 +20,7 @@
       </div>
       <p class="action-block__language text-nav">EN</p>
       <div class="grad">
-        <Menu v-if="menuIsOpen" @closeMenu="menuIsOpen = false" />
+        <Menu v-show="menuIsOpen" @closeMenu="menuIsOpen = false" />
         <img
           src="/image/unnamed.jpg"
           alt=""

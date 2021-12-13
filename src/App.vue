@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <portal-target name="modal"></portal-target>
     <Header
       :style="`background-color: rgba(10, 9, 20, ${isScroll})`"
       @scroll="onScroll"

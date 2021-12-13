@@ -134,13 +134,13 @@
 .form-wrapper {
   background: gradient(180deg, 0.33, 0.06, 0%, 100%);
   border: 1px solid #257B8E;
-  padding: 40px;
+  padding: 30px 40px;
   border-radius: 11px;
   width: 660px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 10px;
-  row-gap: 30px;
+  row-gap: 20px;
   position: relative;
 
   &__title {

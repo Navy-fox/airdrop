@@ -12,7 +12,11 @@
         <span class="link__title">Settings</span>
       </div>
       <div class="menu__separator"></div>
-      <router-link to="/login" class="menu-list__link" @click.native="closeMenu()">
+      <router-link
+        to="/login"
+        class="menu-list__link"
+        @click.native="closeMenu()"
+      >
         <img src="icon/log-out.svg" class="link__img" alt="" />
         <span class="link__title">Relogin</span>
       </router-link>

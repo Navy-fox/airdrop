@@ -9,23 +9,64 @@
       <label class="fieldset__label">Password</label>
       <input type="password" class="fieldset__input" />
     </div>
-    <button class="button button--gradient" type="button">Enter</button>
-    <div class="button-wrap">
-      <button class="button button--grad-border" type="button">Support</button>
+    <div class="btn-group">
+      <button class="button button--gradient" type="button">Enter</button>
+      <div class="button-wrap" @click="modals.support = true">
+        <button class="button button--grad-border" type="button">
+          Support
+        </button>
+      </div>
+      <button class="button button--border btn-pass" type="button">
+        Remind me of my password
+      </button>
     </div>
-    <button class="button button--border btn-pass" type="button">
-      Remind me of my password
-    </button>
+
+    <ModalSupport
+      v-model="modals.support"
+      v-if="modals.support"
+      @isSuccess="
+        modals.support = false;
+        modals.success = true;
+      "
+    />
+    <ModalSuccess v-model="modals.success" v-if="modals.success" />
   </form>
 </template>
 
 <script>
+import ModalSuccess from "./modal/modal-success";
+import ModalSupport from "./modal/modal-support";
+
 export default {
   name: "login-form",
+  components: { ModalSupport, ModalSuccess },
+  data() {
+    return {
+      modals: {
+        support: false,
+        success: false,
+      },
+    };
+  },
 };
 </script>
 
 <style lang="scss">
+.btn-group {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+
+  .button,
+  .button-wrap {
+    grid-column: span 1;
+    width: 100%;
+    height: auto;
+  }
+}
+
 .btn-pass {
   font-family: LabGrotesque, serif;
   font-size: 14px;
