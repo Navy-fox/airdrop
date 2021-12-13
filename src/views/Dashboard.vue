@@ -1,13 +1,15 @@
 <template>
-  <div class="dashboard wrapper grid">
-    <h1 class="dashboard__heading">
-      <span class="heading heading--grad2"> User Dashboard </span>
-    </h1>
-    <Balance class="balance" />
-    <Information class="information" />
-    <ChartTokens class="chart-tokens" />
-    <Transactions class="transactions" />
-    <AirdropHistory class="airdrop-history" />
+  <div class="dashboard">
+    <div class="wrapper grid">
+      <h1 class="dashboard__heading">
+        <span class="heading heading--grad2"> User Dashboard </span>
+      </h1>
+      <Balance class="balance" />
+      <Information class="information" />
+      <ChartTokens class="chart-tokens" />
+      <Transactions class="history" />
+      <AirdropHistory class="airdrop-history" />
+    </div>
   </div>
 </template>
 
@@ -20,12 +22,19 @@ import Transactions from "../components/dashboard-components/transactions";
 
 export default {
   name: "Dashboard",
-  components: { Transactions, AirdropHistory, ChartTokens, Information, Balance },
+  components: {
+    Transactions,
+    AirdropHistory,
+    ChartTokens,
+    Information,
+    Balance,
+  },
 };
 </script>
 
 <style lang="scss">
 .dashboard {
+  background: gradient-accent(-265deg, 21%, 66%);
   &__heading {
     grid-column: span 12;
     padding-top: 110px;
@@ -43,7 +52,7 @@ export default {
   grid-column: span 4;
 }
 
-.transactions,
+.history,
 .airdrop-history {
   grid-column: span 6;
 }
