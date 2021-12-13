@@ -108,6 +108,13 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  &--grad-revert {
+    color: $color-accent;
+    background: gradient-accent(-265deg, 27%, 77%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .wrapper {

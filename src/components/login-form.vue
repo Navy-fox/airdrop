@@ -10,7 +10,9 @@
       <input type="password" class="fieldset__input" />
     </div>
     <div class="btn-group">
-      <button class="button button--gradient" type="button">Enter</button>
+      <button class="button button--gradient" type="button">
+        <router-link to="/dashboard">Enter</router-link>
+      </button>
       <div class="button-wrap" @click="modals.support = true">
         <button class="button button--grad-border" type="button">
           Support
