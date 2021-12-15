@@ -35,6 +35,7 @@ export default {
   grid-column: span 4;
   display: flex;
   align-items: center;
+  z-index: 2;
 
   background: #14131e;
   border: 1px solid #28263a;

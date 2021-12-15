@@ -39,7 +39,7 @@ export default {
 <style lang="scss">
 #app {
   background-color: $color-dark;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .scroll {
