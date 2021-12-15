@@ -131,7 +131,8 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 40px;
+  column-gap: 40px;
+  row-gap: 40px;
   @include mob() {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;

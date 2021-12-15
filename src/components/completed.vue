@@ -17,7 +17,7 @@
 
 <script>
 import CardCompleted from "./card/card-completed";
-import { CARDS_COMPLETED } from "../data/CARD_COMPLETED";
+import { CARDS_COMPLETED } from "../data/CARDS_COMPLETED";
 import { isMobile } from "../utils/isMobile";
 
 export default {

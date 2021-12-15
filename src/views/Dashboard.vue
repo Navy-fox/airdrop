@@ -10,6 +10,7 @@
       <Transactions class="history" />
       <AirdropHistory class="airdrop-history" />
     </div>
+    <Follow class="follow" />
   </div>
 </template>
 
@@ -19,10 +20,12 @@ import Information from "../components/dashboard-components/information";
 import ChartTokens from "../components/dashboard-components/chart-tokens";
 import AirdropHistory from "../components/dashboard-components/airdrop-history";
 import Transactions from "../components/dashboard-components/transactions";
+import Follow from "../components/dashboard-components/follow";
 
 export default {
   name: "Dashboard",
   components: {
+    Follow,
     Transactions,
     AirdropHistory,
     ChartTokens,
@@ -35,6 +38,7 @@ export default {
 <style lang="scss">
 .dashboard {
   background: gradient-accent(-265deg, 21%, 66%);
+
   &__heading {
     grid-column: span 12;
     padding-top: 110px;
@@ -55,5 +59,9 @@ export default {
 .history,
 .airdrop-history {
   grid-column: span 6;
+}
+
+.follow {
+  grid-column: span 12;
 }
 </style>

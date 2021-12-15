@@ -1,9 +1,9 @@
 <template>
   <DashboardBlock title="Airdrops history" class="history">
     <div class="history__head">
-      <span>Type</span>
+      <span>Name</span>
       <span>Date</span>
-      <span class="amount"> Amount </span>
+      <span class="result"> Result </span>
     </div>
     <div class="history__line"></div>
     <div class="history__body">
@@ -87,7 +87,7 @@ export default {
     display: grid;
     grid-template-columns: 180px 1fr 1fr;
 
-    .amount {
+    .result {
       justify-self: end;
     }
   }

@@ -60,7 +60,7 @@ export default {
       isJoined: {
         year: false,
         month: false,
-        day: false,
+        day: true,
       },
     };
   },
