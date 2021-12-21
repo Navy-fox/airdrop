@@ -85,5 +85,8 @@
   &:hover {
     transform: scale(1.05);
     transition: all ease-in-out 0.15s;
+    @include tab() {
+      transform: none;
+    }
   }
 }

@@ -60,13 +60,6 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin-top: 20px;
-
-  .button,
-  .button-wrap {
-    grid-column: span 1;
-    width: 100%;
-    height: auto;
-  }
 }
 
 .btn-pass {
@@ -75,5 +68,8 @@ export default {
   font-style: normal;
   font-weight: 400;
   line-height: 111%;
+  @include mob() {
+    border: none;
+  }
 }
 </style>

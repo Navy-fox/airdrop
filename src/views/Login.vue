@@ -52,6 +52,8 @@ export default {
 
 <style lang="scss">
 .login {
+  position: relative;
+  //overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,6 +65,20 @@ export default {
     margin-bottom: 45px;
     height: 50px;
     font-size: 49px;
+    z-index: 2;
+    @include mob() {
+      margin-bottom: 10px;
+      height: 100px;
+      text-align: center;
+      color: $color-accent;
+      background: gradient-accent(360deg, 35%, 71%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  @include mob() {
+    padding: 140px 10px 70px;
   }
 }
 
@@ -72,6 +88,7 @@ export default {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  z-index: 2;
 
   &__text {
     font-family: adineuePROCyr, serif;
@@ -86,6 +103,12 @@ export default {
     background: radial-gradient(#64e2ff 0%, rgba(100, 226, 255, 0) 100%);
     width: 580px;
     height: 1px;
+    @include tab() {
+      width: 150%;
+    }
+    @include mob() {
+      width: 100%;
+    }
   }
 
   &__icons {
@@ -130,16 +153,16 @@ export default {
     top: -45%;
     left: -35%;
 
-    //@include lap() {
-    //  display: none;
-    //}
-    //@include mob() {
-    //  display: block;
-    //  width: 350px;
-    //  height: 350px;
-    //  top: 4%;
-    //  left: 0;
-    //}
+    @include lap() {
+      left: -45%;
+      top: -60%;
+    }
+    @include mob() {
+      width: 700px;
+      height: 700px;
+      top: -10%;
+      left: -70%;
+    }
   }
 
   &__shadow-rose-bot {
@@ -153,9 +176,9 @@ export default {
     height: 900px;
     bottom: -20%;
     left: -30%;
-    //@include lap() {
-    //  left: -80%;
-    //}
+    @include lap() {
+      left: -40%;
+    }
     //@include tab() {
     //  left: -90%;
     //  top: 70%;
@@ -164,6 +187,11 @@ export default {
     //  width: 600px;
     //  height: 600px;
     //}
+    @include mob() {
+      width: 600px;
+      height: 600px;
+      left: -60%;
+    }
   }
 
   &__shadow-blue {
@@ -177,6 +205,12 @@ export default {
     height: 100vh;
     top: 0;
     left: 70%;
+    @include lap() {
+      left: 60%;
+    }
+    @include mob() {
+      width: 500px;
+    }
   }
 
   &__box-rose {
@@ -193,17 +227,20 @@ export default {
       left: 2%;
       transform: rotate(45deg);
 
-      //@include lap() {
-      //  display: none;
-      //}
-      //@include tab() {
-      //  display: block;
-      //  filter: none;
-      //  width: 56px;
-      //  height: 50px;
-      //  top: 20%;
-      //  left: 6%;
-      //}
+      @include lap() {
+        top: 85%;
+        left: 10%;
+      }
+      @include tab() {
+        top: 90%;
+        left: 6%;
+      }
+      @include mob() {
+        width: 51px;
+        height: 45px;
+        top: 8%;
+        left: 80%;
+      }
     }
 
     &--2 {
@@ -213,9 +250,18 @@ export default {
       left: 5%;
       transform: rotate(-16deg);
 
-      //@include lap() {
-      //  display: none;
-      //}
+      @include lap() {
+        top: 50%;
+        left: -5%;
+      }
+      @include tab() {
+        width: 200px;
+        height: 180px;
+        top: 60%;
+      }
+      @include mob() {
+        display: none;
+      }
     }
 
     &--3 {
@@ -226,9 +272,21 @@ export default {
       transform: matrix(-0.94, -0.34, -0.34, 0.94, 0, 0);
       filter: blur(15px);
 
-      //@include lap() {
-      //  display: none;
-      //}
+      @include lap() {
+        top: -5%;
+        left: -5%;
+      }
+      @include tab() {
+        width: 316px;
+        height: 280px;
+        top: -5%;
+        left: -10%;
+      }
+      @include mob() {
+        width: 200px;
+        height: 180px;
+        filter: blur(7px);
+      }
     }
   }
 
@@ -246,17 +304,19 @@ export default {
       right: 17%;
       transform: rotate(-15deg);
 
-      //@include lap() {
-      //  display: none;
-      //}
-      //@include tab() {
-      //  display: block;
-      //  filter: none;
-      //  width: 56px;
-      //  height: 50px;
-      //  top: 20%;
-      //  left: 6%;
-      //}
+      @include lap() {
+        top: 20%;
+        right: 15%;
+      }
+      @include tab() {
+        top: 10%;
+        right: 5%;
+      }
+      @include mob() {
+        width: 53px;
+        height: 47px;
+        top: 30%;
+      }
     }
 
     &--2 {
@@ -266,9 +326,19 @@ export default {
       right: 8%;
       transform: rotate(67deg);
 
-      //@include lap() {
-      //  display: none;
-      //}
+      @include lap() {
+        top: 65%;
+        right: -2%;
+      }
+      @include tab() {
+        width: 261px;
+        height: 233px;
+        top: 78%;
+        right: -6%;
+      }
+      @include mob() {
+        display: none;
+      }
     }
 
     &--3 {
@@ -276,13 +346,26 @@ export default {
       height: 451px;
       top: 8%;
       right: -17%;
-      transform: rotate(-10deg);
-      //transform: matrix(-0.94, -0.34, -0.34, 0.94, 0, 0);
+      transform: rotate(-20deg);
       filter: blur(15px);
 
-      //@include lap() {
-      //  display: none;
-      //}
+      @include lap() {
+        top: 10%;
+        right: -22%;
+      }
+      @include tab() {
+        width: 414px;
+        height: 370px;
+        top: 25%;
+        right: -35%;
+      }
+      @include mob() {
+        width: 140px;
+        height: 124px;
+        filter: blur(5px);
+        opacity: 0.5;
+        left: -10%;
+      }
     }
   }
 }
