@@ -54,6 +54,11 @@ export default {
 </script>
 
 <style lang="scss">
+.login-form {
+  @include mob() {
+    padding-bottom: 0;
+  }
+}
 .btn-group {
   grid-column: span 3;
   display: grid;

@@ -58,7 +58,7 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-top: 140px;
+  padding: 140px 10px 70px;
   gap: 24px;
 
   &__title {
@@ -78,7 +78,6 @@ export default {
   }
 
   @include mob() {
-    padding: 140px 10px 70px;
   }
 }
 

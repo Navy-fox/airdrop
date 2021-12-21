@@ -12,7 +12,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
 .modal-wrapper {
   background: rgba(10, 9, 20, 0.95);
   backdrop-filter: blur(160px);
@@ -23,5 +23,9 @@ export default {
   align-items: center;
   position: fixed;
   z-index: 11;
+
+  @include tab() {
+    padding: 24px;
+  }
 }
 </style>

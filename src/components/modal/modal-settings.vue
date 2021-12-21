@@ -35,9 +35,9 @@
             type="button"
             class="fieldset__button"
             :class="{ 'fileset__button--joined': isJoined.google }"
-            @click="isJoined.google = !isJoined.google"
+            @click="isJoined.google = true"
           >
-            {{ isJoined.google ? "Joined" : "Nickname" }}
+            {{ isJoined.google ? "Nickname" : "Joined" }}
           </button>
         </div>
         <div class="fieldset">
@@ -46,9 +46,9 @@
             type="button"
             class="fieldset__button"
             :class="{ 'fileset__button--joined': isJoined.telegram }"
-            @click="isJoined.telegram = !isJoined.telegram"
+            @click="isJoined.telegram = true"
           >
-            {{ isJoined.telegram ? "Joined" : "@nickname" }}
+            {{ isJoined.telegram ? "@nickname" : "Joined" }}
           </button>
         </div>
         <div class="fieldset">
@@ -57,9 +57,9 @@
             type="button"
             class="fieldset__button"
             :class="{ 'fileset__button--joined': isJoined.facebook }"
-            @click="isJoined.facebook = !isJoined.facebook"
+            @click="isJoined.facebook = true"
           >
-            {{ isJoined.facebook ? "Joined" : "@nickname" }}
+            {{ isJoined.facebook ? "@nickname" : "Joined" }}
           </button>
         </div>
         <div class="fieldset">
@@ -68,9 +68,9 @@
             type="button"
             class="fieldset__button"
             :class="{ 'fileset__button--joined': isJoined.linkedin }"
-            @click="isJoined.linkedin = !isJoined.linkedin"
+            @click="isJoined.linkedin = true"
           >
-            {{ isJoined.linkedin ? "Joined" : "nickname" }}
+            {{ isJoined.linkedin ? "nickname" : "Joined" }}
           </button>
         </div>
       </div>
@@ -99,10 +99,10 @@ export default {
   data() {
     return {
       isJoined: {
-        google: true,
-        telegram: true,
-        facebook: true,
-        linkedin: true,
+        google: false,
+        telegram: false,
+        facebook: false,
+        linkedin: false,
       },
       modalSupport: false,
     };
@@ -125,6 +125,12 @@ export default {
 </script>
 
 <style lang="scss">
+.modal-settings {
+  @include tab() {
+    width: 100%;
+    height: 100%;
+  }
+}
 .collaboration {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -133,6 +139,12 @@ export default {
 
   .fieldset {
     grid-column: span 1;
+    @include tab() {
+      grid-column: span 2;
+    }
+  }
+  @include tab() {
+    grid-column: span 4;
   }
 }
 
@@ -142,5 +154,8 @@ export default {
   height: 1px;
   background: #257b8e;
   margin: 10px 0;
+  @include lap() {
+    margin: 5px 0;
+  }
 }
 </style>

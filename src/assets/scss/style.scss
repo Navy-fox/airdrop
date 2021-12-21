@@ -142,7 +142,7 @@
 .form-wrapper {
   background: gradient(180deg, 0.33, 0.06, 0%, 100%);
   border: 1px solid #257B8E;
-  padding: 30px 40px;
+  padding: 40px 30px;
   border-radius: 11px;
   width: 660px;
   display: grid;
@@ -150,9 +150,9 @@
   column-gap: 10px;
   row-gap: 20px;
   position: relative;
-  @include mob() {
+  @include tab() {
     width: 100%;
-    padding-bottom: 0;
+    padding: 30px 16px;
   }
 
   &__title {
@@ -164,7 +164,7 @@
     grid-column: span 1;
     width: 100%;
     height: auto;
-    @include mob() {
+    @include tab() {
       grid-column: span 4;
       height: 60px;
     }
@@ -177,12 +177,19 @@
   flex-direction: column;
   gap: 4px;
 
+  @include tab() {
+    grid-column: span 4;
+  }
+
   &__label {
     font-family: LabGrotesque, serif;
     color: $color-white;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
+    @include mob() {
+      font-size: 15px;
+    }
   }
 
   &__input {
@@ -194,18 +201,19 @@
     padding: 13px 30px;
     @include mob() {
       padding: 10px 15px;
+      width: 100%;
     }
   }
 
   &__button {
-    border-radius: 8px;
-    background: #01333F;
-    border: none;
     font-family: adineuePROCyr, serif;
     font-size: 16px;
     color: $color-white;
     cursor: pointer;
     box-sizing: border-box;
+    border: $color-primary solid 1px;
+    border-radius: 8px;
+    background: none;
     height: 50px;
   }
 
@@ -215,8 +223,11 @@
 }
 
 .fileset__button--joined {
-  border: $color-primary solid 1px;
-  background: none;
+
+  background: #01333F;
+  border: none;
+
+
 }
 
 .modal-close {
