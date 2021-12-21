@@ -7,7 +7,7 @@
       <Balance class="balance" />
       <Information class="information" />
       <ChartTokens class="chart-tokens" />
-      <Transactions class="history" />
+      <Transactions class="transactions" />
       <AirdropHistory class="airdrop-history" />
     </div>
     <Follow class="follow" />
@@ -236,16 +236,34 @@ export default {
 .chart-tokens {
   grid-column: span 4;
   z-index: 2;
+  @include tab() {
+    grid-column: span 12;
+  }
 }
 
-.history,
+.balance,
+.information {
+  @media (max-width: 1280px) {
+    grid-column: span 6;
+  }
+}
+
+.chart-tokens {
+  @media (max-width: 1280px) {
+    grid-column: span 12;
+  }
+}
+
+.transactions,
 .airdrop-history {
   grid-column: span 6;
   z-index: 2;
+  @media (max-width: 1280px) {
+    grid-column: span 12;
+  }
 }
 
 .follow {
   grid-column: span 12;
-  //z-index: 2;
 }
 </style>

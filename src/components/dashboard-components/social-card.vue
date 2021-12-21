@@ -62,6 +62,14 @@ export default {
     justify-content: space-between;
     gap: 7px;
     margin-left: auto;
+    white-space: nowrap;
+  }
+
+  @include lap() {
+    grid-column: span 6;
+  }
+  @include tab() {
+    grid-column: span 12;
   }
 }
 

@@ -62,8 +62,14 @@ export default {
   &:hover {
     bottom: 0;
     transition: all ease-in-out 0.8s;
-  }
 
+    @include tab() {
+      transition: none;
+    }
+  }
+  @include tab() {
+    bottom: 0;
+  }
   &__title {
     grid-column: span 2;
   }
