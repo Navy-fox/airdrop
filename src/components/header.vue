@@ -14,13 +14,15 @@
     </nav>
     <div class="action-block">
       <div class="action-block__icons">
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
+        <img src="/icon/md.svg" alt="" />
+        <img src="/icon/tg.svg" alt="" />
+        <img src="/icon/tw.svg" alt="" />
       </div>
       <p class="action-block__language text-nav">EN</p>
       <div class="grad">
-        <Menu v-show="menuIsOpen" @closeMenu="menuIsOpen = false" />
+        <transition name="menu">
+          <Menu v-show="menuIsOpen" @closeMenu="menuIsOpen = false" />
+        </transition>
         <img
           src="/image/unnamed.jpg"
           alt=""
@@ -28,25 +30,55 @@
           @click="menuIsOpen = !menuIsOpen"
         />
       </div>
+      <transition name="menu-mobile">
+        <MenuMobile v-show="menuMobIsOpen" />
+      </transition>
+
+      <img
+        src="/icon/bar.svg"
+        alt=""
+        class="action-block__bar"
+        @click="menuMobIsOpen = true"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import Menu from "./menu";
+import MenuMobile from "./menu-mobile";
 
 export default {
   name: "header",
-  components: { Menu },
+  components: { MenuMobile, Menu },
   data() {
     return {
       menuIsOpen: false,
+      menuMobIsOpen: false,
     };
   },
 };
 </script>
 
 <style lang="scss">
+.menu-mobile-enter-active,
+.menu-mobile-leave-active {
+  transition: right 1s;
+}
+.menu-mobile-enter,
+.menu-mobile-leave-to {
+  right: -80%;
+}
+
+.menu-enter-active,
+.menu-leave-active {
+  transition: opacity 1s;
+}
+.menu-enter,
+.menu-leave-to {
+  opacity: 0;
+}
+
 .header {
   position: fixed;
   background: rgba(10, 9, 20, 0.5);
@@ -57,6 +89,11 @@ export default {
   padding: 5px 48px;
   width: 100vw;
   z-index: 10;
+  @include tab() {
+    padding: 20px 15px;
+    /*padding-left: 15px;*/
+    /*padding-right: 15px;*/
+  }
 }
 
 .text-nav {
@@ -81,20 +118,47 @@ export default {
 .nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 82px;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 70px;
+  /*justify-content: center;*/
+  /*gap: 82px;*/
+  @include tab() {
+    display: none;
+  }
 }
 
 .action-block {
   display: flex;
   align-items: center;
+  min-width: 220px;
   gap: 30px;
 
   &__icons {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    cursor: pointer;
+
+    @include tab() {
+      display: none;
+    }
   }
 
   &__language {
     cursor: pointer;
+  }
+
+  &__bar {
+    display: none;
+    @include tab() {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  @include tab() {
+    min-width: auto;
   }
 }
 
@@ -128,6 +192,9 @@ export default {
     bottom: 0;
     background: linear-gradient(-135deg, #21d4fd 22%, #e40ecf 70%);
     border-radius: 50%;
+  }
+  @include tab() {
+    display: none;
   }
 }
 </style>

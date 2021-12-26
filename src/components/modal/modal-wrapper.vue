@@ -1,8 +1,10 @@
 <template>
   <portal to="modal">
-    <div class="modal-wrapper">
-      <slot></slot>
-    </div>
+    <transition name="modal" appear mode="out-in">
+      <div class="modal-wrapper">
+        <slot></slot>
+      </div>
+    </transition>
   </portal>
 </template>
 
@@ -27,5 +29,14 @@ export default {
   @include tab() {
     padding: 24px;
   }
+}
+
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 1s;
+}
+.modal-enter,
+.modal-leave-to {
+  opacity: 0;
 }
 </style>

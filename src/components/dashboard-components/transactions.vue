@@ -1,9 +1,9 @@
 <template>
   <DashboardBlock title="Transactions" class="transactions">
     <div class="transactions__head">
-      <span>Type</span>
+      <span class="type">Type</span>
       <span>Date</span>
-      <span class="amount"> Amount </span>
+      <span> Amount </span>
     </div>
     <div class="transactions__line"></div>
     <div class="transactions__body">
@@ -64,14 +64,14 @@ export default {
     font-size: 18px;
     color: #3f465c;
     padding: 20px 24px;
-    //display: flex;
-    //align-items: center;
-    //justify-content: space-between;
-    display: grid;
-    grid-template-columns: 220px 1fr 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*display: grid;*/
+    /*grid-template-columns: 220px 1fr 1fr;*/
 
-    .amount {
-      justify-self: end;
+    .type {
+      min-width: 120px;
     }
   }
 
@@ -84,8 +84,12 @@ export default {
   &__body {
     padding: 14px 24px 24px;
     font-size: 15px;
-    display: grid;
-    grid-template-columns: 220px 1fr 1fr;
+    /*display: grid;*/
+    /*grid-template-columns: 220px 1fr 1fr;*/
+    min-width: 132px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__col-1 {

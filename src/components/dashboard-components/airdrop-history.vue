@@ -1,9 +1,9 @@
 <template>
   <DashboardBlock title="Airdrops history" class="history">
     <div class="history__head">
-      <span>Name</span>
+      <span class="name">Name</span>
       <span>Date</span>
-      <span class="result"> Result </span>
+      <span> Result </span>
     </div>
     <div class="history__line"></div>
     <div class="history__body">
@@ -84,11 +84,12 @@ export default {
     font-size: 18px;
     color: #3f465c;
     padding: 20px 24px;
-    display: grid;
-    grid-template-columns: 180px 1fr 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    .result {
-      justify-self: end;
+    .name {
+      max-width: 120px;
     }
   }
 
@@ -101,8 +102,9 @@ export default {
   &__body {
     padding: 14px 24px 24px;
     font-size: 15px;
-    display: grid;
-    grid-template-columns: 180px 1fr 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__col-1 {
@@ -111,11 +113,16 @@ export default {
     gap: 20px;
     font-family: adineuePROCyr, serif;
     color: $color-accent;
+    white-space: nowrap;
 
     &--item {
       background: gradient-accent(130deg, 10%, 25%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+
+    @include mob() {
+      gap: 43px;
     }
   }
 
@@ -124,6 +131,8 @@ export default {
     flex-direction: column;
     gap: 20px;
     color: $color-white;
+    padding: 0 10px;
+    white-space: pre-wrap;
   }
 
   &__col-3 {
@@ -133,11 +142,16 @@ export default {
     gap: 20px;
     font-family: adineuePROCyr, serif;
     color: $color-accent;
+    white-space: nowrap;
 
     &--item {
       background: gradient-accent(110deg, 70%, 95%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+
+    @include mob() {
+      gap: 43px;
     }
   }
 }

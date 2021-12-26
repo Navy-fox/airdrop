@@ -1,17 +1,19 @@
 <template>
   <ModalWrapper>
-    <div class="modal-success form-wrapper">
-      <img
-        src="icon/close.svg"
-        class="modal-close"
-        alt=""
-        @click="CloseModal"
-      />
-      <div class="modal-success__success">
-        <Success />
+    <transition appear mode="out-in">
+      <div class="modal-success form-wrapper">
+        <img
+          src="icon/close.svg"
+          class="modal-close"
+          alt=""
+          @click="CloseModal"
+        />
+        <div class="modal-success__success">
+          <Success />
+        </div>
+        <h3 class="modal-success__description heading">Success</h3>
       </div>
-      <h3 class="modal-success__description heading">Success</h3>
-    </div>
+    </transition>
   </ModalWrapper>
 </template>
 

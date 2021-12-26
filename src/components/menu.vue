@@ -21,18 +21,7 @@
         <span class="link__title">Relogin</span>
       </router-link>
     </div>
-    <ModalSettings
-      v-model="modals.settings"
-      v-if="modals.settings"
-      @openSupport="
-        modals.settings = false;
-        modals.support = true;
-      "
-      @isSuccess="
-        modals.settings = false;
-        modals.success = true;
-      "
-    />
+
     <ModalSupport
       v-model="modals.support"
       v-if="modals.support"
@@ -42,6 +31,19 @@
       "
     />
     <ModalSuccess v-model="modals.success" v-if="modals.success" />
+    <ModalSettings
+      v-model="modals.settings"
+      v-if="modals.settings"
+      @isSuccess="
+        modals.settings = false;
+        modals.success = true;
+      "
+      @openSupport="
+        modals.settings = false;
+        modals.success = false;
+        modals.support = true;
+      "
+    />
   </div>
 </template>
 
@@ -57,8 +59,9 @@ export default {
     return {
       modals: {
         settings: false,
-        support: false,
+
         success: false,
+        support: false,
       },
     };
   },
@@ -114,5 +117,14 @@ export default {
   width: 100%;
   height: 1px;
   background: #28263a;
+}
+
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 1s;
+}
+.modal-enter,
+.modal-leave-to {
+  opacity: 0;
 }
 </style>

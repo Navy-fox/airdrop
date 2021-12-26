@@ -232,24 +232,24 @@ export default {
 }
 
 .balance,
-.information,
-.chart-tokens {
+.information {
   grid-column: span 4;
   z-index: 2;
+  @media (max-width: 1280px) {
+    grid-column: span 6;
+  }
   @include tab() {
     grid-column: span 12;
   }
 }
 
-.balance,
-.information {
-  @media (max-width: 1280px) {
-    grid-column: span 6;
-  }
-}
-
 .chart-tokens {
+  grid-column: span 4;
+  z-index: 2;
   @media (max-width: 1280px) {
+    grid-column: span 12;
+  }
+  @include tab() {
     grid-column: span 12;
   }
 }

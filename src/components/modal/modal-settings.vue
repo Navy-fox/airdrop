@@ -1,90 +1,98 @@
 <template>
   <ModalWrapper>
-    <form class="modal-settings form-wrapper">
-      <img
-        src="icon/close.svg"
-        class="modal-close"
-        alt=""
-        @click="CloseModal"
-      />
-      <h3 class="form-wrapper__title heading heading--h3">Settings profile</h3>
-      <div class="fieldset">
-        <label class="fieldset__label">Your name</label>
-        <input type="text" class="fieldset__input" />
-      </div>
-      <div class="fieldset">
-        <label class="fieldset__label">Your city</label>
-        <input type="text" class="fieldset__input" />
-      </div>
-      <div class="fieldset">
-        <label class="fieldset__label">Phone number</label>
-        <input type="tel" class="fieldset__input" />
-      </div>
-      <div class="fieldset">
-        <label class="fieldset__label">E-mail</label>
-        <input type="email" class="fieldset__input" />
-      </div>
-      <div class="fieldset">
-        <label class="fieldset__label">Wallet Foil</label>
-        <input type="text" class="fieldset__input" />
-      </div>
-      <div class="collaboration">
+    <transition appear mode="out-in">
+      <form class="modal-settings form-wrapper" key="set">
+        <img
+          src="icon/close.svg"
+          class="modal-close"
+          alt=""
+          @click="CloseModal"
+        />
+        <h3 class="form-wrapper__title heading heading--h3">
+          Settings profile
+        </h3>
         <div class="fieldset">
-          <label class="fieldset__label">Google</label>
-          <button
-            type="button"
-            class="fieldset__button"
-            :class="{ 'fileset__button--joined': isJoined.google }"
-            @click="isJoined.google = true"
-          >
-            {{ isJoined.google ? "Nickname" : "Joined" }}
-          </button>
+          <label class="fieldset__label">Your name</label>
+          <input type="text" class="fieldset__input" />
         </div>
         <div class="fieldset">
-          <label class="fieldset__label">Telegram</label>
-          <button
-            type="button"
-            class="fieldset__button"
-            :class="{ 'fileset__button--joined': isJoined.telegram }"
-            @click="isJoined.telegram = true"
-          >
-            {{ isJoined.telegram ? "@nickname" : "Joined" }}
-          </button>
+          <label class="fieldset__label">Your city</label>
+          <input type="text" class="fieldset__input" />
         </div>
         <div class="fieldset">
-          <label class="fieldset__label">Facebook</label>
-          <button
-            type="button"
-            class="fieldset__button"
-            :class="{ 'fileset__button--joined': isJoined.facebook }"
-            @click="isJoined.facebook = true"
-          >
-            {{ isJoined.facebook ? "@nickname" : "Joined" }}
-          </button>
+          <label class="fieldset__label">Phone number</label>
+          <input type="tel" class="fieldset__input" />
         </div>
         <div class="fieldset">
-          <label class="fieldset__label">Linkedin</label>
-          <button
-            type="button"
-            class="fieldset__button"
-            :class="{ 'fileset__button--joined': isJoined.linkedin }"
-            @click="isJoined.linkedin = true"
-          >
-            {{ isJoined.linkedin ? "nickname" : "Joined" }}
-          </button>
+          <label class="fieldset__label">E-mail</label>
+          <input type="email" class="fieldset__input" />
         </div>
-      </div>
-      <div class="separator"></div>
-      <button type="button" class="button button--gradient" @click="isSuccess">
-        Save settings
-      </button>
-      <div class="button-wrap" @click="openSupport">
-        <button type="button" class="button button--grad-border">
-          Support
+        <div class="fieldset">
+          <label class="fieldset__label">Wallet Foil</label>
+          <input type="text" class="fieldset__input" />
+        </div>
+        <div class="collaboration">
+          <div class="fieldset">
+            <label class="fieldset__label">Google</label>
+            <button
+              type="button"
+              class="fieldset__button"
+              :class="{ 'fileset__button--joined': isJoined.google }"
+              @click="isJoined.google = true"
+            >
+              {{ isJoined.google ? "Nickname" : "Joined" }}
+            </button>
+          </div>
+          <div class="fieldset">
+            <label class="fieldset__label">Telegram</label>
+            <button
+              type="button"
+              class="fieldset__button"
+              :class="{ 'fileset__button--joined': isJoined.telegram }"
+              @click="isJoined.telegram = true"
+            >
+              {{ isJoined.telegram ? "@nickname" : "Joined" }}
+            </button>
+          </div>
+          <div class="fieldset">
+            <label class="fieldset__label">Facebook</label>
+            <button
+              type="button"
+              class="fieldset__button"
+              :class="{ 'fileset__button--joined': isJoined.facebook }"
+              @click="isJoined.facebook = true"
+            >
+              {{ isJoined.facebook ? "@nickname" : "Joined" }}
+            </button>
+          </div>
+          <div class="fieldset">
+            <label class="fieldset__label">Linkedin</label>
+            <button
+              type="button"
+              class="fieldset__button"
+              :class="{ 'fileset__button--joined': isJoined.linkedin }"
+              @click="isJoined.linkedin = true"
+            >
+              {{ isJoined.linkedin ? "nickname" : "Joined" }}
+            </button>
+          </div>
+        </div>
+        <div class="separator"></div>
+        <button
+          type="button"
+          class="button button--gradient"
+          @click="isSuccess"
+        >
+          Save settings
         </button>
-      </div>
-      <button type="reset" class="button button--border">Cancel</button>
-    </form>
+        <div class="button-wrap" @click="openSupport">
+          <button type="button" class="button button--grad-border">
+            Support
+          </button>
+        </div>
+        <button type="reset" class="button button--border">Cancel</button>
+      </form>
+    </transition>
   </ModalWrapper>
 </template>
 
