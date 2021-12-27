@@ -1,10 +1,10 @@
-#!/usr/bin/env sh
+
 
 # остановить публикацию при ошибках
 set -e
 
 # сборка
-npm run build
+yarn build
 
 # переход в каталог сборки
 cd dist
@@ -20,6 +20,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # если вы публикуете по адресу https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:Navy-fox/airdrop.git master:gh-pages
+git push -f git@github.com:navy-fox/airdrop.git master:gh-pages
 
 cd -
