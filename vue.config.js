@@ -6,4 +6,5 @@ module.exports = {
       patterns: [path.resolve(__dirname, "./src/assets/scss/system/*.scss")],
     },
   },
+  publicPath: process.env.NODE_ENV === "production" ? "/airdrop/" : "/",
 };
