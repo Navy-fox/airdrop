@@ -59,7 +59,6 @@ export default {
     return {
       modals: {
         settings: false,
-
         success: false,
         support: false,
       },

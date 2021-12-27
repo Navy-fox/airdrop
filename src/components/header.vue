@@ -2,15 +2,14 @@
   <div class="header">
     <img src="/icon/logo.svg" alt="logo" class="logo" />
     <nav class="nav">
-      <router-link to="/" class="nav__item text-nav">Foil</router-link>
-      <router-link to="/" class="nav__item text-nav">Learn</router-link>
-      <router-link to="/" class="nav__item text-nav">Blog</router-link>
-      <router-link to="/" class="nav__item text-nav">Product</router-link>
-      <router-link to="/" class="nav__item text-nav">Community</router-link>
-      <router-link to="/" class="nav__item text-nav"
-        >Block Explorer
+      <router-link
+        :to="i.to"
+        class="nav__item text-nav"
+        v-for="(i, k) in links"
+        :key="k"
+      >
+        {{ i.name }}
       </router-link>
-      <router-link to="/" class="nav__item text-nav">Contact Us</router-link>
     </nav>
     <div class="action-block">
       <div class="action-block__icons">
@@ -31,7 +30,10 @@
         />
       </div>
       <transition name="menu-mobile">
-        <MenuMobile v-show="menuMobIsOpen" />
+        <MenuMobile
+          v-show="menuMobIsOpen"
+          @closeMobMenu="menuMobIsOpen = false"
+        />
       </transition>
 
       <img
@@ -47,6 +49,7 @@
 <script>
 import Menu from "./menu";
 import MenuMobile from "./menu-mobile";
+import { LINKS_LIST } from "../data/LINKS_LIST";
 
 export default {
   name: "header",
@@ -55,6 +58,7 @@ export default {
     return {
       menuIsOpen: false,
       menuMobIsOpen: false,
+      links: LINKS_LIST,
     };
   },
 };
@@ -89,10 +93,11 @@ export default {
   padding: 5px 48px;
   width: 100vw;
   z-index: 10;
+  @include lap() {
+    padding: 5px 15px;
+  }
   @include tab() {
     padding: 20px 15px;
-    /*padding-left: 15px;*/
-    /*padding-right: 15px;*/
   }
 }
 
@@ -104,6 +109,7 @@ export default {
   line-height: 22px;
   color: $color-nav-text;
   transition: all ease-in-out 0.3s;
+  white-space: nowrap;
 
   &:hover {
     color: $color-text-active;
@@ -113,6 +119,10 @@ export default {
   &--active {
     color: $color-text-active;
   }
+
+  @include lap() {
+    padding: 5px 3px;
+  }
 }
 
 .nav {
@@ -121,6 +131,7 @@ export default {
   justify-content: space-between;
   width: 100%;
   padding: 0 70px;
+  flex-wrap: wrap;
   /*justify-content: center;*/
   /*gap: 82px;*/
   @include tab() {
@@ -166,7 +177,7 @@ export default {
   color: #313149;
   display: inline-block;
   margin: 2px;
-  width: 35px;
+  min-width: 35px;
   height: 35px;
   border-radius: 50%;
   cursor: pointer;
