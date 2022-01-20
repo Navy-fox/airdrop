@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <img src="/icon/logo.svg" alt="logo" class="logo" />
+    <img src="icon/logo.svg" alt="logo" class="logo" />
     <nav class="nav">
       <router-link
         :to="i.to"
@@ -13,9 +13,9 @@
     </nav>
     <div class="action-block">
       <div class="action-block__icons">
-        <img src="/icon/md.svg" alt="" />
-        <img src="/icon/tg.svg" alt="" />
-        <img src="/icon/tw.svg" alt="" />
+        <img src="icon/md.svg" alt="" />
+        <img src="icon/tg.svg" alt="" />
+        <img src="icon/tw.svg" alt="" />
       </div>
       <p class="action-block__language text-nav">EN</p>
       <div class="grad">
@@ -23,7 +23,7 @@
           <Menu v-show="menuIsOpen" @closeMenu="menuIsOpen = false" />
         </transition>
         <img
-          src="/image/unnamed.jpg"
+          src="image/unnamed.jpg"
           alt=""
           class="user-icon"
           @click="menuIsOpen = !menuIsOpen"
@@ -37,7 +37,7 @@
       </transition>
 
       <img
-        src="/icon/bar.svg"
+        src="icon/bar.svg"
         alt=""
         class="action-block__bar"
         @click="menuMobIsOpen = true"

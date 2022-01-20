@@ -280,7 +280,7 @@ export default {
     height: 100%;
     left: 0;
     //background: url("/image/sky.png") top / cover no-repeat;
-    background-image: url("/image/sky.png");
+    background-image: url("../image/sky.png");
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -294,7 +294,7 @@ export default {
     height: 60%;
     left: 0;
     bottom: 0;
-    background-image: url("/image/human.png");
+    background-image: url("../image/human.png");
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -312,7 +312,7 @@ export default {
     left: 45%;
     transform: rotate(11deg);
     //mix-blend-mode: screen;
-    background-image: url("/image/box-open.png");
+    background-image: url("../image/box-open.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto auto;
@@ -335,7 +335,7 @@ export default {
 
   &__box-rose {
     position: absolute;
-    background-image: url("/image/box-rose.png");
+    background-image: url("../image/box-rose.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -422,7 +422,7 @@ export default {
 
   &__box-blue {
     position: absolute;
-    background-image: url("/image/box-blue.png");
+    background-image: url("../image/box-blue.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

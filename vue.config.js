@@ -6,5 +6,5 @@ module.exports = {
       patterns: [path.resolve(__dirname, "./src/assets/scss/system/*.scss")],
     },
   },
-  publicPath: "/airdrop/",
+  publicPath: "./",
 };

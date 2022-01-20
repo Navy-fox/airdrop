@@ -5,7 +5,7 @@
   font-style: normal;
   font-display: auto;
   src: local('Axiforma'),
-  url("/fonts/Axiforma-Regular.woff") format('woff');
+  url(~@/assets/fonts/Axiforma-Regular.woff) format('woff');
 }
 
 //font: LabGrotesque - R
@@ -15,7 +15,7 @@
   font-style: normal;
   font-display: auto;
   src: local('LabGrotesque'),
-  url("/fonts/LabGrotesque-Regular.woff") format('woff');
+  url("~@/assets/fonts/LabGrotesque-Regular.woff") format('woff');
 }
 
 //font: LabGrotesque - M
@@ -25,7 +25,7 @@
   font-style: normal;
   font-display: auto;
   src: local('LabGrotesque'),
-  url("/fonts/LabGrotesque-Regular.woff") format('woff');
+  url("~@/assets/fonts/LabGrotesque-Regular.woff") format('woff');
 }
 
 //font: LabGrotesque - Bold
@@ -35,7 +35,7 @@
   font-style: normal;
   font-display: auto;
   src: local('LabGrotesque'),
-  url("/fonts/LabGrotesque-Regular.woff") format('woff');
+  url("~@/assets/fonts/LabGrotesque-Regular.woff") format('woff');
 }
 
 //font: LabGrotesque - Black
@@ -45,7 +45,7 @@
   font-style: normal;
   font-display: auto;
   src: local('LabGrotesque'),
-  url("/fonts/LabGrotesque-Regular.woff") format('woff');
+  url("~@/assets/fonts/LabGrotesque-Regular.woff") format('woff');
 }
 
 //font: adineuePROCyr
@@ -55,5 +55,5 @@
   font-style: normal;
   font-display: auto;
   src: local('adineuePROCyr'),
-  url("/fonts/adineuePROCyr-BoldWeb.woff") format('woff');
+  url("~@/assets/fonts/adineuePROCyr-BoldWeb.woff") format('woff');
 }

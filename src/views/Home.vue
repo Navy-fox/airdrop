@@ -137,7 +137,7 @@ export default {
 
   &__box-rose {
     position: absolute;
-    background-image: url("/image/box-rose.png");
+    background-image: url("../image/box-rose.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -168,7 +168,7 @@ export default {
 
   &__box-blue {
     position: absolute;
-    background-image: url("/image/box-blue.png");
+    background-image: url("../image/box-blue.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
