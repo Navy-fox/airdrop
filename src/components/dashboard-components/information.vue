@@ -35,7 +35,7 @@ export default {
 .information-image {
   width: 100%;
   height: 311px;
-  background-image: url(/image/card-actual/c2.png);
+  background-image: url("../../image/card-actual/c2.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
